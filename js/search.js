@@ -49,7 +49,7 @@
         } else {
             const el = document.createElement('div')
             el.className = 'no-results'
-            el.innerHTML = 'No results found.'
+            el.innerHTML = '未找到结果。'
             resultsEl.push(el)
         }
 
