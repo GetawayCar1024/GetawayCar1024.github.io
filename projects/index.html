@@ -80,7 +80,7 @@
         data-config-root="/"
         
         data-toc="true"
-        data-toc-max-depth="2"
+        data-toc-max-depth="3"
         
         
     >
@@ -125,9 +125,9 @@
 
         
         <div class="date" id="date">
-            <span>December</span>
-            <span>8,</span>
-            <span>2024</span>
+            <span>February</span>
+            <span>16,</span>
+            <span>2025</span>
         </div>
         
 
@@ -141,6 +141,10 @@
 <p>一款富含 OI（信息学奥赛）元素的卡牌游戏，目前处于开发阶段。</p>
 <p>如果你想加入，请在仓库中提issue或发邮件到<code>heyicong.jeremy@gmail.com</code>。</p>
 <p>仓库地址：<a target="_blank" rel="noopener" href="https://github.com/JeremyHe1209/ByteBlitz">ByteBlitz</a></p>
+<h1 id="事件捕捉"><a href="#事件捕捉" class="headerlink" title="事件捕捉"></a>事件捕捉</h1><p><em>英文名：EventCapture</em></p>
+<p>用于捕捉事件并作出反应的模块。</p>
+<p>本模块将被用于码卡。</p>
+<p>仓库地址：<a target="_blank" rel="noopener" href="https://github.com/JeremyHe1209/EventCapture">EventCapture</a></p>
 
     </div>
 
@@ -191,9 +195,9 @@
             <div class="group">
                 <h2 class="title">开源项目</h2>
                 
-                <a target="_blank" rel="noopener" href="https://github.com/JeremyHe1209/jeremyhe1209.github.io" class="item">个人博客</a>
-                
                 <a target="_blank" rel="noopener" href="https://github.com/JeremyHe1209/ByteBlitz" class="item">码卡</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/JeremyHe1209/EventCapture" class="item">事件捕捉</a>
                 
             </div>
             
@@ -241,6 +245,15 @@
         
         
 
-        <!--  -->
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
     </body>
 </html>
