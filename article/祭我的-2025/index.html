@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Getaway_Car">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes ASAP (before DOMContentLoaded)
+            (function() {
+                const addBodyClass = () => {
+                    const b = document.body;
+                    if (!b) return false;
+                    b.classList.add(theme + "-mode");
+                    return true;
+                };
+
+                // Try immediately
+                if (addBodyClass()) return;
+
+                // Observe until body exists
+                const mo = new MutationObserver(() => {
+                    if (addBodyClass()) mo.disconnect();
+                });
+                mo.observe(document.documentElement, { childList: true, subtree: true });
+            })();
+        })();
+    </script>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://getawaycar1024.github.io/article/祭我的-2025/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="本文内容和自述的内容有少许重叠。 这次我会 尝试 写得不那么屎。话说祭我的 2024 是真唐吧。 阅读时请不要对号入座。  当初我选择离开 15 班显然很有原因，但是选择回到 15 班又是为了什么呢。也许是为了更好地搞 OI，以及对 whk 显然没有负面作用。但是当时我更追求的其实是 15 班，于是就有了比较高的期望。 我已经记不清当时我理想中的 15 班是怎样的，所以似乎无法进行理想与现实的比较">
+<meta property="og:type" content="article">
+<meta property="og:title" content="祭我的 2025">
+<meta property="og:url" content="https://getawaycar1024.github.io/article/%E7%A5%AD%E6%88%91%E7%9A%84-2025/index.html">
+<meta property="og:site_name" content="Getaway_Car&#39;s Blog">
+<meta property="og:description" content="本文内容和自述的内容有少许重叠。 这次我会 尝试 写得不那么屎。话说祭我的 2024 是真唐吧。 阅读时请不要对号入座。  当初我选择离开 15 班显然很有原因，但是选择回到 15 班又是为了什么呢。也许是为了更好地搞 OI，以及对 whk 显然没有负面作用。但是当时我更追求的其实是 15 班，于是就有了比较高的期望。 我已经记不清当时我理想中的 15 班是怎样的，所以似乎无法进行理想与现实的比较">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
+<meta property="article:published_time" content="2025-12-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-29T14:10:52.260Z">
+<meta property="article:author" content="Getaway_Car">
+<meta property="article:tag" content="记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/Getaway_Car.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Getaway_Car.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/Getaway_Car.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            祭我的 2025 | Getaway_Car&#39;s Blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"getawaycar1024.github.io","root":"/","language":"zh-cn","path":"search.json"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/Getaway_Car.jpg","description":null},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Getaway_Car's Blog","subtitle":{"text":["Good Bye 2025.","Hello 2026!"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null,"/images/logos/luogu.png":"https://www.luogu.com.cn/user/725640","/images/logos/codeforces.png":"https://codeforces.com/profile/Getaway_Car","/images/logos/atcoder.png":"https://atcoder.jp/users/Getaway_Car","/images/logos/github.png":"https://github.com/GetawayCar1024"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Friends":"/friends"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/12/07 22:53:20"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Getaway_Car&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    TAGS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/friends">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                TAGS
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/friends">FRIENDS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">58</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">祭我的 2025</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/Getaway_Car.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Getaway_Car</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2026-01-01</span>
+        <span class="mobile">2026-01-01</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-12-29 22:10:52</span>
+            <span class="mobile">2025-12-29 22:10:52</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.9k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>13 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<p>本文内容和自述的内容有少许重叠。</p>
+<p>这次我会 <strong>尝试</strong> 写得不那么屎。话说祭我的 2024 是真唐吧。</p>
+<p>阅读时请不要对号入座。</p>
+<hr>
+<p>当初我选择离开 15 班显然很有原因，但是选择回到 15 班又是为了什么呢。也许是为了更好地搞 OI，以及对 whk 显然没有负面作用。但是当时我更追求的其实是 15 <strong>班</strong>，于是就有了比较高的期望。</p>
+<p>我已经记不清当时我理想中的 15 班是怎样的，所以似乎无法进行理想与现实的比较，也不能非常明确地说出到底是什么让我失望。简而言之，也许是 15 班并没有我想象中的那么团结，以及学习氛围没有想象中的那么好。于是心理上的落差就让我讨厌身边的一切。</p>
+<p>另一方面，回到 15 班后，我并没有变得比之前快乐。我原本认为 15 班能给我提供情绪价值（无论是以哪种方式提供），但事实上并没有。我自己也完全找不到情绪价值，说人话就是没什么事情能让我真正的快乐（？）。</p>
+<p>于是我只剩下负能量，负能量积累久了自然就会崩溃。那一段时间抑郁的情绪较多吧，也有一些消极的想法。当时经常会毫无理由地心情低落，感觉一天天过得很艰难。有时太难受了就只有出去走两圈，上课的时候就只能咬自己，有天晚上把寝室里窗户的钉子给拆了。</p>
+<p>不过好在我胆小没跳吧。</p>
+<p>话说前几天看了看我之前手写的日记，感觉我能活下来也算是奇迹了。感谢胆小救了我一万次。</p>
+<hr>
+<p>六月底或七月初，我有一天晚上突然觉得学 OI 好累，可 OI 是之前唯一可以让我提起兴趣的东西。我忽然觉得，现在似乎更没有什么东西能够让我快乐了。那天晚上我心情很闷，要不是胆小可能都不会回寝室了。我不知道，当世界上再也没有能让我感到快乐的事情，活着还有什么意义（这句话也是 自述 最初的名字）。</p>
+<p>于是七月份的集训，除了前几天，后面的时间我似乎都是额头靠在桌子上，什么都不干，脑海中似乎空荡荡的。平时情绪也极其低下，完全没有做任何事情的动力。</p>
+<p>恰好那几天看到了洛谷上的 <a class="link" target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/qrq7sodx">某篇文章<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>，这似乎说的就是我，我想说些什么，可是我又什么都说不出。我想要改变我的现状，可是我又无能为力。</p>
+<hr>
+<p>以下这段话比较废话。</p>
+<p>长期的抑郁，似乎身体上也有了反应。上学期我有一两个月反复生病（包括感冒、发烧、麦粒肿、角膜炎等），虽然我并不认为这与抑郁直接相关，但我认为这也许是我（因为抑郁）免疫力下降的表现。</p>
+<p>后来七月份集训的时候，我毫无征兆的就发烧了，印象中并没有着凉或者热着了。后来倒是两天左右就好了，也许就只是一次普通感冒。只能说我身体此时已经差到什么程度了。</p>
+<hr>
+<p>接下来的故事都是新近发生的，所以内容会相对详细。</p>
+<p>只能说抑郁和焦虑根本无法比较，因为两者都极其折磨人。</p>
+<p>某天晚上，我本来不应当打 CF (Div. 3)，但还是和（新）初三的一起去了机房。话说由于暑假开始时我就已经极其厌恶 whk，所以整个暑假两三周的时间，我几乎什么作业都没写。那咋办呢，尽管再不愿意，在确定停课之前，还是只有补呗。于是那天晚上我在写英语字帖。</p>
+<p>突然，我心跳加速了一下，就像是即将公布成绩时紧张的感觉。随后几分钟内我又反复心慌了几次。我很疑惑，当时想着也许是熬夜导致的。可是后来几天，随着离开学越来越近，我心慌的频率越来越高。</p>
+<p>一天晚上，我在寝室闻到了一种奇怪的味道，大概是一种熏臭味，具体难以形容，让人很难受。我以为是我感冒了，于是就忍着臭味睡觉了。可是后来几天，同样是反复地、间歇性地出现这样的症状，并且不在相同的地方出现，那就很奇怪了。上网搜了一下，学到了一个新的名词：</p>
+<p>幻嗅。</p>
+<p>话说这个症状似乎比较小众。下面节选自一篇知乎上的文章：</p>
+<blockquote>
+<p>幻嗅的发生通常与多种病因相关，包括神经系统疾病、精神障碍以及其他健康问题。常见的原因包括但不限于：</p>
+<p>神经系统疾病：如帕金森病、阿尔茨海默病、癫痫等。</p>
+<p>精神障碍：如精神分裂症、抑郁症等。</p>
+<p>药物或毒物的影响：某些药物或化学物质的摄入可能引发幻嗅。</p>
+<p>脑部损伤或疾病：如脑肿瘤、脑血管病等。</p>
+</blockquote>
+<p>第一、三、四条显然不太可能，所以呢。</p>
+<p>再结合心慌的症状，哦，原来这是焦虑啊。</p>
+<p>到最后两天，我焦虑已经达到怎样的程度了呢。心慌一次让我喘不过气，同时感到极其疲倦。然而我一天要心慌若干次。到了晚上，我只能给同学说，我太累了。</p>
+<p>话说这两周我依然不想写 whk 作业，但是还没想好开学后如何面对，所以也还没有完全放弃 whk 作业。直到最后一两天我才彻底放弃，并且想好了：我要停课。</p>
+<hr>
+<p>似乎我拖到了开学前一天才告诉我家长我想停课，因为出于各种各样的原因，我并不愿意给我的家长说我的内心想法。告诉他们我想停课的同时，我也说了上学期我过得很不好，同时我已经厌倦甚至是反感 whk 了。那天晚上比较急，于是和我爸吵了一架。</p>
+<p>话说其实我最初并没有说我想停课，我说的是我想休息一段时间，随后我家长说，为什么不直接停课呢，于是就开始讨论关于停课的事情。</p>
+<p>题外话是，吵了一架后，第二天我爸给我说，要坚强一些，没什么大不了的，有些事情现在看着很困难，以后看来就屁事没有。看来他们似乎并不认为我可能有心理问题，或是并不认为心理问题多么难以解决。</p>
+<p>但是无论如何，cjx 在帮我争取停课，并且很快就与 wj 达成了一致，话说还带上了 zcy 和 cdo 一起停课。可是开学那天还没能确定停课，于是我还是只有回到班上。开学那天我状态特别差，因为害怕，极其害怕，害怕任何事情。</p>
+<p>接下来的一段故事，如果不是因为一位神人，许多人都应当知道。这位神人是谁呢，这位神人就是 drl。开学那天，他在 tx 问道我去哪里了时他莫名其妙却毫无波澜地说我在高一机房并且没有引起 tx 一点怀疑。</p>
+<p>当时是，tx 开始收作业了，我实在是坐立不安，于是就偷偷溜出了教室。我该去哪里呢，也许可以出去乱逛，但一是这样可能会被班上的人看到（班上的人可以看到我出去），二是可能会被外面的老师看到并询问。那咋办呢，于是我去了厕所。</p>
+<p>然后，我 就 在 厕 所 的 一 个 隔 间 里 待 了 接 近 两 个 小 时。这期间，我掐了自己，并且还掐破了皮，也许还咬了自己，因为实在是太难受了。这些行为看着似乎很神经，我现在看来也是，但是当时确实心里极其难受。</p>
+<p>我出来过后碰到了几个班上的人，但是似乎没有人问我去哪里了。直到吃完饭后碰到 zcy 询问他后才知道，这个神人 drl 说我去高一机房了，然后糖糖 tx 还信了。</p>
+<p>以上是一个小插曲。吃完饭后，我陪 zcy 去门卫室给他家长打了个电话，同时也得知，我们第二天参加完开学典礼就可以直接到机房停课了。我终于如释重负。</p>
+<hr>
+<p>停课过后，我的症状好了很多。抑郁的症状渐渐消失了，焦虑的症状在之后的一段时间还偶有出现，但是到现在也基本消失了。只是遇到一些事情的时候焦虑还是会发作。</p>
+<p>接下来我会先按照时间顺序讲一些停课过后发生的事情，比较流水账，再讲一些我的思考。</p>
+<p>九月时我还经常 emo，但总体而言这个月十分轻松。这段时间训练压力不大，机房里就几个人，咔咔、企鹅、阿凉、mz 以及我们初三的几个。</p>
+<p>十月和十一月压力还是不小，一周三至四次模拟赛也是有办法。后来虽然阿凉走了，但是之前的好朋友又回来了，十一月的时候又在和 jmr 一起写 Gemmer（虽然这是不对的）。只能说这两个月过得比较平淡吧。可惜的是，CSP-S 和 NOIP 都没考好，或许可以说 CSP-S 是发挥不好，但 NOIP 只能说是比上不足比下有余和策略问题。但策略这东西只能说很难绷吧。</p>
+<p>十二月比较难绷吧，上上下下地跑，两边的效率都不是特别高，但是主观上讲也比补文化好多了。</p>
+<hr>
+<p>其实这几个月，感觉我一直都是得过且过的状态。虽说我喜欢 OI，但是也如同我之前说的那样，OI 并不能很容易让我感到快乐。只是相比之前，我几乎没有了负面情绪，于是这几个月整体情绪还比较正常。每天晚上走出教学楼时，我又会想，到底有什么事情能让我快乐呢，似乎每天依然过得很空虚。</p>
+<p>另外，停课过后，我变得怕人了。说人话就是，在许多场合下非常害羞。虽然那些人并不会吃了我，但是我就像那些人要吃我一样尝试避而远之。至于到底为什么怕我也不知道，总之就是极其不愿意和 和我半生不熟的人 或 不认识的人 接触（不过最近回班一段时间过后感觉好一些了）。因此，我的交际圈在不断缩小。</p>
+<p>写一些心里话，可能戾气有点重。其实我觉得很多时候，我总是不被注意的，或是说存在感很低甚至几乎没有。当我发现我被遗忘时，我想找人诉说，但我又什么话都说不出，最多憋出一句“存在感这一块”这样的话。经常，我说一句心里话，却没有人回应。因此，我渐渐地养成了把话憋回去的习惯，因为我说的话得不到回应，显得我跟小丑一样。我在线下也许还算是有那么几个 <strong>好</strong> 朋友，可是这些好朋友似乎只是表面上的好朋友？只是平时打打闹闹以及聊些很日常或学术的话题而已。我线上也曾有几个好朋友，可是因为各种原因，现在也不怎么联系，平时也没有人会找我聊天。总之就是觉得挺孤独的。不过似乎这也比上学期好一些了，不至于影响状态。</p>
+<p>但是我写这些又是为了什么呢？其实我想 <strong>说明</strong> 我渴望被注意，我并不认为我应当成为那个被孤立的人。但是这很矛盾：我既不愿意和人接触，又和别人没有任何共同语言，还想被别人注意。其实我很早就发现这个问题了，但是我也无能为力。曾经有一个人主动来帮助我，当时我很惊喜，因为似乎从某个时候开始就再也没有人关心我了，我在这里真心感谢他，尽管他大概率看不到。可是后来因为一些原因和他失去了联系。</p>
+<hr>
+<p>这一部分主要讲我对于恋爱的一些想法。这似乎算是个新话题（？）。首先说明我现在想谈女的（）。</p>
+<p>也许是因为孤独，也许还因为其他一些因素，这学期的某一天开始，我就极其想谈恋爱。之前，我“想谈”也许更多是因为对一个人的喜欢。但是这次我却没有目标，也不知道我应当做些什么。我在寝室里重复说着我想谈恋爱，某人也给出了一些建议（），但是似乎都被我以各种理由否了（）。其实归根结底，原因还是我不愿意和人接触，或者说是内向（？）。于是在某一天，我意识到 就算我在寝室里说我想谈恋爱 我也谈不到恋爱，于是在此之后我就很少再在寝室里说我想谈恋爱。</p>
+<p>以上是我的现状，【数据删除】。接下来我会讲我对恋爱的一些思考。</p>
+<p>首先，我认为中学时期的恋人难以走到最后，所以我现在想谈恋爱更多是为了当下。</p>
+<p>在我意识到我似乎谈不到恋爱的同时，我也开始思考，我到底为什么想谈恋爱。更准确地，我谈恋爱到底是为了什么。也许是因为孤独，想要得到陪伴，可是单纯的朋友也可以给我陪伴（？）。另外我也曾得到过陪伴，但我并不清楚那到底是不是我想要的。那么我到底想要什么，我也不知道。</p>
+<p>说人话就是我在追求一个完全未知的东西。</p>
+<p>另外，考虑到我的性格，也是找得到哈。就算找到了，能否正常地在线下聊天是第一个问题。</p>
+<p>说人话就是明知自己谈不成又想谈。</p>
+<p>也是有办法。</p>
+<hr>
+<p>我渴望被人关注，于是我渴望表达，因为这是让别人关注我的唯一方式，于是才有了自述以及这篇文章。写这篇文章之前，我本想表达很多想法，但最后因为各种原因并没有完全表达出来。有的是因为想法比较抽象，有的是因为一些事情涉及到隐私，有的是因为一些事情可能带有个人主观的攻击性言论。</p>
+<p>以上所有，似乎还是写得挺屎的，但是不管了。</p>
+<hr>
+<blockquote>
+<p>“Oh, my, love is a lie,”</p>
+<p>shit my friends say to get me by.</p>
+<p>It hits different,</p>
+<p>it hits different this time.</p>
+</blockquote>
+<p>随便写的一句歌词，没有任何实际含义。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 祭我的 2025</li>
+        <li><strong>Author:</strong> Getaway_Car</li>
+        <li><strong>Created at
+                :</strong> 2026-01-01 00:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-12-29 22:10:52
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://getawaycar1024.github.io/article/祭我的-2025/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/article/CF2182F1-2-Christmas-Reindeer-%E9%A2%98%E8%A7%A3/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">[CF2182F1 / 2] Christmas Reindeer 题解</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'getawaycar1024/getawaycar1024.github.io',
+                'data-repo-id': 'R_kgDONTsbfg',
+                'data-category': 'Announcements',
+                'data-category-id': 'DIC_kwDONTsbfs4CuIU-',
+                'data-mapping': 'pathname',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'en',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">祭我的 2025</div>
+		
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-regular fa-computer-classic"></i>&nbsp;&nbsp;<a href="/">Getaway_Car</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        58 posts in total
+                    </span>
+                    
+                        <span>
+                            74.1k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="fa-regular fa-arrow-up"></i>
+		</li>
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
