@@ -611,7 +611,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">58</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">62</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -695,7 +695,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">58</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">62</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -710,6 +710,311 @@ mjx-container[display="true"] + br {
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CF2133D-Chicken-Jockey-%E9%A2%98%E8%A7%A3/">
+                            [CF2133D] Chicken Jockey 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            Upd. 修了一点笔误。
+显然是 DP，并且是稍微想一想就能发现性质的 DP。
+首先攻击的形式一定钦定若干个生物，打死这些生物，使得剩下的生物形成若干个堆叠。对于每个堆叠，我们再从下往上依次一个个打死。容易发现，若  是一个独立的堆叠，需要的攻击次数是 ，减一与加一是因为除了第一个生物都会受到  的跌落伤害。设前缀和数组为 ，那么上式就是 。
+注意到，为了减少攻击次数，我们会尽量增加摔落伤害...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Aug 25 2025 10:00:00 GMT+0800">
+                
+                    2025-08-25
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2133D-Chicken-Jockey-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2133D] Chicken Jockey 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ARC203C-Destruction-of-Walls-%E9%A2%98%E8%A7%A3/">
+                            [ARC203C] Destruction of Walls 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            看到  就显然分讨了。
+
+Case 1：
+此时显然无解。
+
+Case 2：
+此时答案即为从  走到  的方案数，即 。
+
+Case 3：
+即在 Case 2 的基础上再选一堵墙拆除。发现对于任意一条从  到  的路径，都可以选择其余任意一堵墙拆除。故答案为 。
+
+Case 4：
+发现此时又产生了两种情况。一种是路径长度依旧为 ，另一种是路径长度为 。
+
+Case 4.1：路径长度为 
+即在 ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Aug 04 2025 23:00:00 GMT+0800">
+                
+                    2025-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ARC203C-Destruction-of-Walls-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203C] Destruction of Walls 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ARC203B-Swap-If-Equal-Sum-%E9%A2%98%E8%A7%A3/">
+                            [ARC203B] Swap If Equal Sum 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            首先，必要条件是两个序列的和相同。
+容易发现，操作是可逆的。所以考虑将  和  变为一种相对规则的形式，比如单调。由于单调不降与单调递增是对称的，所以接下来讨论单调不降。
+现在的问题是，能否将一个序列通过若干次操作变为单调不降的。考虑简化操作，变成：
+
+交换 0 与 0 0
+（或）交换 0 1 与 1
+（或）交换 1 0 与 1
+
+注意到，当序列之和（即  的数量） 时，我们一定可以把所有的...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Aug 03 2025 23:30:00 GMT+0800">
+                
+                    2025-08-03
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ARC203B-Swap-If-Equal-Sum-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203B] Swap If Equal Sum 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">
+                            [ARC203A] All Winners 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            手模几个样例之后，容易发现构造：
+
+对于每个队伍，令其中  个人始终获胜，其中  个人始终战败。
+那么对于每一个始终获胜的人，都可以匹配到  个其他队伍的始终战败的人。同理，对于每一个始终战败的人，都可以匹配到  个其他队伍的始终获胜的人。
+当  是奇数时，每个队还各有  个人未被匹配。此时我们只能令其中一个人始终获胜。
+
+综上所述，答案为 。代码就懒得放了。
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Aug 03 2025 23:00:00 GMT+0800">
+                
+                    2025-08-03
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203A] All Winners 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1196,311 +1501,11 @@ CF 3300* 远古题，洛谷黑...
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/%E6%AF%94%E4%BA%9A%E8%BF%AA%E5%90%B9%E6%B0%94%E7%90%83%E5%A4%A7%E6%88%98/">
-                            比亚迪吹气球大战
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            SCCPC 游记Day 前两天才打完 CQ CCPC 并被 jmr 带飞并写了游记，今天就听说 SC CCPC 已经分组了。
-太好了，终于不和 jmr 一组了，这次和 Kaka 一组。（甚至还是二人队伍。）上次连上机的机会都没有呜呜呜。
-Day 诶诶诶，初三的那几天要军训，所以不能和 Kaka 一组了。
-最后和 @O_v_O 大佬讨论了一下，和他与 @maichong 大佬一组了。
-Day ...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Jun 09 2025 12:00:00 GMT+0800">
-                
-                    2025-06-09
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/%E6%AF%94%E4%BA%9A%E8%BF%AA%E5%90%B9%E6%B0%94%E7%90%83%E5%A4%A7%E6%88%98/">Read more<span class="seo-reader-text">比亚迪吹气球大战</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/diary/2025/06/">
-                            2025 年 6 月日祭
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            2025.6.2 问我怎么挂的今天做题。
-
-[洛谷 P2833] 等式 &amp; [SGU 106] The equation
-板子题啊，可是改了好久。主要死在向下、向上取整时没用 double（因为有负数）。
-
-[SPOJ NWERC11A] Binomial coefficients
-这道题自己想到了枚举 ，二分 ，也想到了会爆 long long，可是没想到枚举。
-对于 ，进行二分；...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Jun 01 2025 00:00:00 GMT+0800">
-                
-                    2025-06-01
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/diary/2025/06/">Read more<span class="seo-reader-text">2025 年 6 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ABC407F-Sums-of-Sliding-Window-Maximum-%E9%A2%98%E8%A7%A3/">
-                            [ABC407F] Sums of Sliding Window Maximum 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            一眼题啊。设  左侧第一个不比它小的数的位置为 ，它右侧第一个比它大的数的位置为 。（这样可以保证既不漏算又不重复计算。）那么对于 ，它可能作为最大值的极长区间显然是 。这个区间又被  分为左右两段。设两段中较短的一段长度为 ，较长一段长度为 ，总长度为 。那么  可以带来以下贡献：
-
-；
-
-；
-
-。
-
-
-将第三组式子拆为：
-
-。
-
-于是维护两个差分数组即可。第一个差分数组  维护的实际值就...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon May 26 2025 18:00:00 GMT+0800">
-                
-                    2025-05-26
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ABC407F-Sums-of-Sliding-Window-Maximum-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC407F] Sums of Sliding Window Maximum 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ARC147C-Min-Diff-Sum-%E9%A2%98%E8%A7%A3/">
-                            [ARC147C] Min Diff Sum 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            本文提供一种另类做法。虽然我的代码从实现以及常数上都更劣一些。
-考虑原式的几何意义，即在数轴上的  个区间内各选一个点使得这  个点两两距离之和最小。
-考虑什么时候距离之和最小，显然是所有点都尽量向某一个位置靠拢时。所以钦定中心点，让其它所有点都尽量向这个点靠拢，再暴力计算贡献。时间复杂度 。
-注意到，中心点取在非端点显然时不会更优，所以可以离散化。时间复杂度  。
-现在考虑优化计算原式的过...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon May 26 2025 18:00:00 GMT+0800">
-                
-                    2025-05-26
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/ESSAY/">ESSAY</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ARC147C-Min-Diff-Sum-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC147C] Min Diff Sum 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-	<a class="extend prev" rel="prev" href="/page/3/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa-regular fa-angle-right"></i></a>
+	<a class="extend prev" rel="prev" href="/page/3/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
   
     </div>
@@ -1521,16 +1526,16 @@ Day ...
               <span>2024</span>
               -
             
-            2025&nbsp;&nbsp;<i class="fa-regular fa-computer-classic"></i>&nbsp;&nbsp;<a href="/">Getaway_Car</a>
+            2026&nbsp;&nbsp;<i class="fa-regular fa-computer-classic"></i>&nbsp;&nbsp;<a href="/">Getaway_Car</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        58 posts in total
+                        62 posts in total
                     </span>
                     
                         <span>
-                            74.1k words in total
+                            74.9k words in total
                         </span>
                     
                 </p>
