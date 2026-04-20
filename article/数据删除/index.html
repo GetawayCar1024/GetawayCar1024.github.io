@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    
+    <meta name="author" content="Getaway_Car">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes ASAP (before DOMContentLoaded)
+            (function() {
+                const addBodyClass = () => {
+                    const b = document.body;
+                    if (!b) return false;
+                    b.classList.add(theme + "-mode");
+                    return true;
+                };
+
+                // Try immediately
+                if (addBodyClass()) return;
+
+                // Observe until body exists
+                const mo = new MutationObserver(() => {
+                    if (addBodyClass()) mo.disconnect();
+                });
+                mo.observe(document.documentElement, { childList: true, subtree: true });
+            })();
+        })();
+    </script>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://getawaycar1024.github.io/article/数据删除/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+        
+        <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据删除">
+<meta property="og:url" content="https://getawaycar1024.github.io/article/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4/index.html">
+<meta property="og:site_name" content="Getaway_Car&#39;s Blog">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
+<meta property="article:published_time" content="2026-01-01T11:10:00.000Z">
+<meta property="article:modified_time" content="2026-04-20T06:45:10.528Z">
+<meta property="article:author" content="Getaway_Car">
+<meta property="article:tag" content="记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/Getaway_Car.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Getaway_Car.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/Getaway_Car.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            数据删除 | Getaway_Car&#39;s Blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"getawaycar1024.github.io","root":"/","language":"en-US","path":"search.json"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":false,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://cn.vercount.one/js","enable":false,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":true},"open_graph":{"enable":true,"image":"/images/Getaway_Car.jpg","description":null},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Getaway_Car's Blog","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":[{"icon":"/images/logos/luogu.png","url":"https://www.luogu.com.cn/user/725640"},{"icon":"/images/logos/codeforces.png","url":"https://codeforces.com/profile/Getaway_Car"},{"icon":"/images/logos/atcoder.png","url":"https://atcoder.jp/users/Getaway_Car"},{"icon":"/images/logos/github.png","url":"https://github.com/GetawayCar1024"},{"icon":"/images/custom-icon.svg","url":null}],"qrs":[{"icon":"fa-brands fa-weixin","qr":null},{"icon":"/images/custom-icon.svg","qr":null}]}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1","theme":{"light":"default","dark":"dark"}}},"version":"2.9.0","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Blog":{"icon":"fa-regular fa-book","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Friends":"/friends"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur","masonry":{"batch_size":12,"initial_batch_size":24}},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Music":{"path":"https://open.spotify.com/playlist/20WkaSrUnveb21AgJ9wbio","icon":"fa-regular fa-music"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footer":{"runtime":true,"icon":null,"start":"2024/12/07 22:53:20","statistics":true,"customize":null,"icp":{"enable":false,"number":null,"url":null}},"footerStart":"2024/12/07 22:53:20","mermaid":{"style":{"light":"default","dark":"dark"}}};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.i18n = {"search":"Search...","toc":"On this page","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"POWERED BY %s","theme":"THEME","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","post":"Post","posts":"Posts","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","top":"TOP","sticky":"Sticky","go-back-home":"Go Back Home","masonry_loading":"Loading photos...","image_viewer":"Image viewer","close":"Close","exif":{"title":"EXIF","cards":{"camera":"Camera","lens":"Lens","exposure":"Exposure","other":"Other"},"fields":{"make":"Brand","model":"Model","date_taken":"Date taken","lens_model":"Lens","focal_length":"Focal length","focus_mode":"Focus mode","shutter":"Shutter","aperture":"Aperture","iso":"ISO","exposure_program":"Exposure program","exposure_compensation":"Exposure compensation","metering_mode":"Metering mode","flash":"Flash","white_balance":"White balance","latitude":"Latitude","longitude":"Longitude","altitude":"Altitude"},"status":{"loading":"Loading...","no_exif":"No EXIF available","library_missing":"EXIF library not loaded","image_source_missing":"Image source unavailable","unavailable":"EXIF unavailable (blocked by CORS or missing metadata)","flag_unavailable":"EXIF unavailable"}},"about":"About","changelog":"Changelog","links":"Links","link":"Link","friends":"Friends","friend":"Friend","timeline":"Timeline","shuoshuo":"Shuoshuo","bookmarks":"Bookmarks","site_uv":"VISITOR COUNT","site_pv":"TOTAL PAGE VIEWS","read_more":"Read more","wordcount":"Words","min2read":"Mins","status":"Status","runtime":"Blog up for","days":"days","hours":"hrs","minutes":"Min","seconds":"Sec","optimized_by":"and Optimized by Evan","rights":"All Rights Reserved","site_posts":"%s posts in total","site_wordcount":"%s words in total","copyright":{"author":"Author","title":"Title","link":"Link","create_time":"Created at","update_time":"Updated at","license_title":"License","license_content":"This work is licensed under %s.","all_rights_reserved":"All Rights Reserved &#169; %s","public_domain":"This work is in the public domain."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"},"create_time":"Created","update_time":"Updated","expired":"This post is written %s days ago, and the content may not be up to date."};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Getaway_Car&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-book fa-fw"></i>
+                                    BLOG
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/friends">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Blog"
+                        >
+                            <span>
+                                BLOG
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Blog">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/friends">FRIENDS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           target="_blank" rel="noopener" href="https://open.spotify.com/playlist/20WkaSrUnveb21AgJ9wbio"
+                        >
+                            <span>Music</span>
+                            <i class="fa-regular fa-music fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">75</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">数据删除</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] shrink-0 rounded-medium border border-border-color p-px">
+				<img src="/images/Getaway_Car.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Getaway_Car</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2026-01-01 19:10</span>
+        <span class="mobile">2026-01-01 19:10</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2026-04-20 14:45:10</span>
+            <span class="mobile">2026-04-20 14:45:10</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>14 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+        </span>
+    
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			
+<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="f6e5ce4cfb83d7e46788581f3468fd6d2aa8e88ba79e9141b044923da7aee912">a70fd62b96f314037cb7b559fe1e42bd573562538dc0bf2966c0bda1660339bf6dae3a46bbdabf71492bf51d7059ce1d2133f6dd1dc37c2b34e5a94fce944ae0dd277f5ed4eff5b8d745f904ea61b11875ffa71ec954723a17cd67b03cb34afc758e7f604710aed4985783b54c09cdf8e055b1cbd97b5e61df35346a11bb58613ad4024bf152ff620db0a716c4ee577a6e91dd352bf0630456091cc47c67ce9bec932e94e19bf794cf795d7559886d804d237065510f85dd76a1973f480da556eb2065493ca4fe3a60e60d135488620e35c744703f2974f480a319ffe3212a0a7bce03bd57d52fd2a95a1b613ae13ce9be9f3ce66026b73ee5f7e53d4cca63f1a5dbe214fb56f42cb0a5ba79d5187d0309b6d59180d3d96e77930fc9336e8cc241d246a4f1e3af796c1a22b25b6e615d44be1679102d89675f70e409009170467072940d3c5c2801498a65cfb078fcc60d752bdc990b48f8e910f774868df5832211388a5a35deb37b883f234a6c91237979e9e6e1128554ef8c30a69a5d216b44c5e233d70573a482fc7f4299011030d9170f7d14c1394bd678a347e222ed0076c6cdd676496ba6562e29ec9b84e4019c4a99c467d8195b2c51b3c8576767908611ee698f59bf065325cfa1ce0c629f2c201942fe8a955e7e36214efb136c2192c23ef356307b66ac2d63c274068364a48e287d1cd7c529193f7f74cd1726169e157bd915b4b9fbba2f9b82dc066060b68f027bf7eb8997a3be04b5fb26b4790a449911594112bcf16bff23fe1dbeb8ee0857400e06179049b0e9878410aa1f66955b1406ca6a58118c684e316bc0c42b6adee685b3c792c54a1edbd63e58f2c0b13dcb5e1929046855cb0684e99628c295c727e4ef7d5a2e11a81f9cc09e0281bdef63992787c2b443cd3e085b2c2ec86a0f08a381e1626db617a2774b21271f57cb4724a2cf464556522a7e508c81132f8ecc4864dd99f1ead2b8a704d876ba7421d8bf60d58e10c9ae143b37edeba934ef558999004dda23c9375920b12eee76b18b521e797746c13020c6711a757807f9976eb837113d2baf4592310ce02b95536026e7d360ba1853cf62d97b60c8ade15e75e629aa939ecef5cb630aa2d15da28d36c763245b73a816d850e87a1cadae84ac76a0063c825a6210da39545289714d00347cdf87606ccdd11671107943b0fa1a1c92650db4d3c906677238d28b76c178d60cee29469383ead38b2c3c461074ecce994a1bf6b5572db23800c63d85c0b15270b38489deefce6fdb3a75361cd6a7935f41eb35b8a23ef06eb9aa7d72d5eee17dacfa9fffdb3501687a7ad1f38f437486cc12a014774fd464945c8e06d19c21fa3f70e6e670d5278d73812775f1257ff758f40eda0ea8bdce82579f0a8255feeebc980fb814db48cfbad801da15f38aa26734697251e3918e938c7204c555558a0ccf7a724671fd7eaed33c883a8d323cc327ba89fc6782b5085294ddcb26086cddaf221fd310fcee6b136ae88992c5a52227c8f4e161acae5b393e3e195e9369be6b1c472f518eaadff82b75fe673496233b69abfd6bea625d90b013c749b7f0319e3516eb65e7e31243d70e7dedb4613ea78a028eb5b283525fc296136f534c10dcf1d09e225da6b429558c966106634e10a5fa8f6e970672383875e21186df13992434dd82af7d5e9388525487079b73cef9b7827d8d0f0a4c22b45ca5a3229f0808a8e387213fb9337a68a81b10240ea5362cf73f6f8cf5502a0818c620c3be41c3a9edff900d1c1bc5011506d1a12ed6c4d0ae12125f6b34033d2f07b57b04931156f9c8984c5f05bfed18d7c8ef689ced55fa5de82da7780469ea1e14826ab5e0c00257792c5b6bb8a0ac1948bc318138db7391e2a9eb7730241f50a50fb57e37aad8caadda94182820ebccaca6682cb8858756b12bb681c18ba5e167e4b91fbf449dcc002b6af6e6a880c4154593486543c7906044f018a5466c67b421ef81693f166ededd30e6378462b89b7c8fd654d48bf090fc56dfefcea26de93d75a945a8f3c4e9124d14268891084670225bcf6c52225f8ef681b6f991a62e9df7327d2b5fa2e6457666e2a1d401888fa3a7e006791df052a5bfc0564481003a6ae9105d734f2ae5a3fa1a03a64c00ef851020713616e94c23de320952ff699a6cd5b7edff1cfe72c57c9cd7cb7b46bf02aea695931e73feae4028a377b69be4c17137af01633dfe164f54132d1f65ed00839456c23e8cf8e1c62251fbe6c7074605e5a994e40d4a411bb2cc9773d406e4bd39a78fa77affc535dd565cf6b1536f55ce7e899f64a6691bdd7302d1070fdada2ee6fdcca91d96c60e26debb9a1bddf0b39d50dc02e10f75106a2707b314dd688c1af55f107215e14eea2358ac1f3fe8aff33ffc10a680c6dcf42e9f26e274af4a9ae889989d3e01c3e8d357443a01ef4c431a1fd5824c56d4fd7cca7f6651b961b100da01ee3ddb98bbedffb9f48e12404b8dfcc70d934e7594fac1c23af6bb0b681dcd85978b38c2ea4061dfd4b8de405504e9ede3ebe144d1d0fb845fe34ac31fac8d3b79e6e0632b9fffbd6528d594a142a17afc20bc837fb83d581ec35fadc5b6168dc3d9cb7dee2eb7699ee9d5d3c6e00c0d6158908532d2cd2c924cdf8be5c7225da02693c0d6739a9a4fe81379c0f8351d7df6b9d2c9f95d8719cb45ba949a9e785da0ac9c7e762c3bb75fb566992d0be154c9fe3220cd1796389b2b25936e22bc5e3c1c63514430c2fe31f42fb40fd8219a9a1455975f010b3897a2fc9ba241754fa3ab2f66291ca80d28f5d6537782235ba5c31656f186fc88e1be49dc6e2c8b0b3c19debfcccbebf1e15c03bb020a943dc9c671595915046deea67044cbc44045c5a7528490c1a8a9c1c89969bb57514c1037367624b3d41150c339c6199798f163ca31842a78d088d148e3c1d2e2ebb74332456eba7a0f5cb6cb0c5983e24e77f05d03a2617ddc2454d299dbef2b9b26c5775a9b84b270e8e9de13f761cd27fd5e15cf18f79f01055a52ab51df6c75ccba0126b1cb0a62d19aadf66fa5de7863bdd384367bdc13ebccad7b53662e3410e059595b175da45f6958d562fd09c55f62c1f8a0b6cb7288639eea6ee4726b9ea79d67efd866816af7cd846976b97d72a7bd888b56a522b829807345a7017ed10ab0efc8cd45a6e92294ab70f447d057110bee9f74578a87be6fe7b3483be13afa9cdfbbcbb1d83a9d45a5970dfde0bb34cf536cc802205dbb20944becdc022b988c513bd652336b62380225db3d812032bae9030a5db31af2d53e582db05f282643a820f469f8c92baf0ab97e0abd70cdf7614b9b4728e5262cb228c721e799218a7ab6ed69f166c9e41caa9fb56ad926a5f93e9217ed2c1fa29df81be9f0221bc75facb389d468a7b1681fb7a15369d7c5935bc97ea0f605f07badc136c13796145a16e71b1346ace5816f5bf9ef9733bf981e6508247dca570d9edca9e00dd60396e6502dd7b83b1730b5840769eb020c4bee7a1c567b273bef1ec10e434b9b6bbc706a66c6f020a144f9ab70d5de1fcfdb8df44b1051a36d6246c4ebfbcd398210cdab4b8b8935d86b29bc498f47ab28214841f2ca8746ba1729a22db08b70cb0b4df4ecf1767675110e4951842b73e0c01071b8cb42cf931620ee000c84d99711dcd3137bf8b9789668e725b75cfac70dbe6561a34f29952f80491492f6152e7a54595d94504958d79c44444d685aed905f88afe76f5aaa3fe9b379a0a78f95321ed3d4387f880549ee42b010f0c51075d51dd8f3497c8cd65f21f6667d3e4f158415402c6344de3863d666a6814aa0574bb6a2f3976017774b3829dbf59560909033d8c7929fc71c6eac614fbfb302759e441f1817a658b500baa91900bc18d6b4dc21060d273522624e583f6f1de909fcdf10f189ef328963a6b381d7bce37cc24b225d002af8f2a2dd8cf1ccd5c104fa5d8f42373a139636b88dd9030b312de55e7bf1f66bbefdcb8449119a5d9004705e4dc148e21590502b39ec2920a7299b8b4593fd91d0957e7cd84eef0ce15077987d8bc9d7fda1e199b0b3f11ca4b725be7c9adbba1601a3744fe5dd94e5eaad2bf45bf094facab1f8b614f594ab648db1915864d175cc97ce2b080c88b04628c9544e8cee5b11b0558b1174068968815c21c829654571ee3ea70b125340eda672d14144276f029047ed4005fce64cb04772bbe2182c770453c37959f07fa6d092f081af2a71e8271d79ad9d39e2cac4439bdc7663f8eecc230e8ff62e000703e7bbda231fe772665ff41f54c1bcae1b5af36bcd56124be801bac1319f0e0b1489f9e7bf7172d6c1f945895e177fbafe66dfe7273e000ca367fd908fb194d4b117bfa0982c34ad7c3381ac1c2d1e231417fa67dbb90b4dfdaa84f40aee3e31225e53ae28c6ca0255083d1b0f2d9f4d96f51dc48686db4c2c0ba80e78bfe9406bb68c4b26ff10d65539f61f1d2afd9ea4183bb32470cdebfca9649856432bf149e6e61756fa0ad8ff4b54fb483d56230c3fdf49a1c99367e7ca659ffe687428f274f334333a4062211391c9890338e9aa402941c8c957d4b5a076381cc8d20e2ccc33d94db86383647ef2b45de94d3ff1134272a5991887e208d705410d3e95567734b11db89e472fd44bac5fc90eabeb8895223a252031c4e37bed7b71e89928e04d14ef99727c2795672b52425eb35bf9dc3e4f024ca65f795b07c64db71db14776dfb3bd0c9ff37c16bd276e18faefbed47130e37e80bb603c3c6856cfbd97289188dfcef1f344299c327371311f69b07da2945086f803d6e5d2abf7b3d5703138260f553bf4eb20bab71a7781e5235170a97e5c3f95db050c2dd1426ea2ac468dbbeb6d03a6a4488d194bf63126143ac1cb25d508b2c11ab4290cded6fb776ae42cdb3a48ce4901a9be7ef48924f57dc5a45f801dcff33fc0821866fbe46083d879e5858d85a490b4f0158e6ef4497f462a6c6965215cf22f158b748f06c28496f4954112bc3ef5e515abe81faa22141b625005f99aede6818895b06508557970939ee18f02ce673c76f558d479061b2cc6f3a7af5e14009eb6dd63fcfe544c3c0c0d855daef484f2a277a14f5d19bb1d60fc886c35c081806ba98bbf13118420c08bf401ae67305b777d51dcf9e75bcd5e84d24892491548852bf06788750e8fc9de5773446161267152f240c35b5ab6d24303763e4f216a3d804cbb25626ecd522d95e1c2a2b5dbbbb5b6c1bbc3949decc43b90a13d5bbcc67aadf25837012afe13770599031e4187c49248e21c9dcd512518cfdc8ccbcf5c3e3b6fff9828697817cb7a3e6a7eb24b5e62fb22c40b096129eb652a7148b2980cb3586d83917714eafa9dfeebcc1bdc57f55de6f220f182f6940e975ff8f069a8e2877acef4bd29905a785d269f0d23cd53369e8062d22e65f84822d5bbcc8885bed80ea0d71ce2484be569852baef82a25e2b3f26afcc277991f56af8347b01fa9ed7da87bfae95b661f2a10be6308c98b8f864651e784c10980984bbf7e0a363e0406610b449c89ca26e5d1c8eb7f8f00b5e97111bd705ddde6e2fbe6d4c3ae8d104fb3615656308bd5da821f1f542c5fe9da562975313b12d853424e730d8007990187221f5fd602ab48d6c180b17f9370a246ed99be1639590e01c680c9c404bd5f6d0f11824c29331fec3b98cbb2ff1f3843bdc92d0759f10f0b87c23e86c8c8d2bfd3c6706a23528799a6c122ee860887c482bfff5a1632764190455a1621c5048cd3a77e212e97138eb7be87f2d2f54b1f8bd0ce7735ca6013fc357864d39cf1c4444897757a42ef36e48dc09fb18856dd53f0ede6fa03e5fa8d799b9af15019121cc5fc9fd2fbe5294f8e34d54ce7e72975b327bc68ba604dc7977ab4728028d44fc429d70e805d18b1acefdfe938bd73df03f7d3654f52684afd69dd569fcf98082c49a6099ad37521c2aadcd5db6f839b92a192582415c316de6bf8e105e7eb6a212af64680b5deef31482bd78321151d740d6c20d25c5898055bd904311a935cbcd520ec1282b887d74aa6cf356ec6166b784d29b54f02a2a1e8736c386dd85e488f72c8841142a93492e22263257b24d9856ab6e1ce825034ed7eb72400c474a6915afa18d41246d55bf99aa88ac7b674c409d18cde348e85bdaee06e12a4d9f83c9ba072463719f29da099c494f268bdb87dd9984cdf0638410b9392459355a427c79c46f52f7aa04611c5ea1097f1b1800fedc454ff896741219f88f6395b069bdd9dcd586ca7434b90b1b8050579caa833c0047e7b34694396cb60fe309fdf5438b68cba6801221db2da913dc63358de371aaab419a6ff472fa14186ea534bc1ea35679fa5939f68b96c53bb73c1e5b20e7efac0b8a61e0285067e1c152865981f81ae1e59cdc29809d29605256ce7faf30c87f88e4876a2073c241bf893077f4bcf8395c2387379348ec88e8b98299e32986cc1afc0fe393c89f9e2b05f3b94399d6b967910b35e571641e4e40be090a1c5317b0996b5a9d3460967f7f029afb60d78309f687bd05916b0350d12f5966240dc189bbaaa4a046a6b45d48c877c244240158e84febe4a0d9d26d2bd18a61acf1af82544c06942591dd3dae690211508d723fef9245a3c659e5988e504ead93ebc2e6628fe1b2006327c1ada43c02239f6f4c9e320262f6f08e2b092d178132186ebd2f4bda404b6df8d6c47563d806458e414968b7951e7dfc84db04045cd6dbe4207c9843b469a7e4ee9301fc8583d3fded4ff92f7f5a3a313218d106ed74424a621eef1662c3118f363867492f0040a9453b8fa5619e0822d1eef5e69096c49fe3f2470e65ed7a159fd871a3b1940e2ebcb838abd5bbcb1dfa425c924d30b0a26f358d03a0d52eab7637aa735d98e8a2d3edaca043231383d842704b123bfbf6bb9b2ba31d95a102f01fcb834706742c72fb9fa725d6027dca3ce526a6abac3b84e96b8ce95b423b7d6be6bb734803389d7d519096c908bb502c5c004c4e367fe21b9f45fd201a940ce2007c9ef412e7b453fd994c01507ce59ae0d3bba932032a50739297d6b8c30f604bf9ec15ebecb785d223e62685452365b5cb501b79e2a700b0c2ce2d90c02c4cbfc678cd371ca0aed9332fbc56416dee82213a1f51a976559547261040c8a435c454988174e6734688f13aa074ac143288f5aca0ebd16ee49d95f2c70c5f996479a44756dbbde226be244233516f0f88e183a8033195ea7719ae684b8bf32c709abd283b71e71fd8d24812dfad4f5853dd42cd0db51fe20e295749f588ceb88b9bc13f917311ac11b386f9cb6aa9d73483fc813fb896df0b6c88470f8287df39660cc86108cf68f833e310d8085468b09b63d6be9aa3cf84d283b2c700121928f99d313a59910fbf17ff778344ee00edec23d69aa9b8bec31dee9cc474a588510c8b3c09a023499aaeabeb6c18039ccb1dc623193a5db088795f2abbe0da084985730c1a38f1100316e0adea3b3aac1674b4b13e22336bf3994b5c3f3e78007e3f4372499c30f5ae967c1b4c2611a39935eed12aa82b030adf47e6d424e946c0be6388a3f2163b913a0c496bd173aa441f103db4d1944e15a7907b48132bd699e62285b96eeb8fe275312264e1cf33bae24d56cf80d8fdac8791e929a9b207aca5ad5cae177931e61fd877a0db972f6bf47cb3a1c5b4eadfd51b0568bcf500168891ba3cf761e979506544e89e39dff83a32ccdeaa9cc631d568b28acd08af5a37ab858630b7e6d87f79b92196d56e3c45913377a5678fd923189b83f3dffe00e882d9e312cbd131bf4962488fa5a7ac74dd3fbadb06a16ddcb67013224ad72c70c2b7c1cdbe1fb2833a07f256a04cc04bfb38f91d4c51444e1d159b8c19b45ece962bbbb920068d103c399602a393abef9a66742f5780b473191ae92bf33fb1c98f0429af4b3d9ee2b32ea906e68a38c093b47bf21a715536980e5dcac71cd1e13a12e400a510b7076b080ee991faa2bfc0c55eb59fa01ec28a153ade5de4460fe0034337abf4460994790035e791dcad5ff89b6d3830c2e11ff2bb1d25b0aaa5df787239c411be08d3b938d3dc66ecfbf72774dfd8259db129382a6045c60e3703547b34c661a10ebefd22af5584771a9c32bc669869c9edbd1eba887c9815cfb02017625fb930243c04513c8ec50cad4b025108d6329025697598df20adb372d449f2ac0c33223fc9baafa882d4810490d6e9de9e7b0928b16441d6b61f56e1214c1cc6820b2a05f22268774122d576cc576318ef415f99b48d2d7db94c78086a155d7e854b44678053a6ec086c534905a3769f5ad8283dbf2238ce4fc71554e86da3bbf74849dcb30deecfe355b94ce6aef37ea4c124a5cdee2a1f79f8f690e494e23b626e53eabdc0383e02277b426e4d181c8101fd5ae40f37ca9579875285eb322671e8c09f339fa551cfc03910464bab7d9e40b73f0359461f5dc80c4bae3c8cacfca00133cd26a060fbf03243969871a8e3494d5a4c58ad95d03d6569ceb7c7d54a27050887019644ad62dc161de8b3b77df0bdf3a49bbd21e0e47c75d734370930a5b5562983d80890c1f45af54796167ae7c48b9d95a04cf7c908cab44c992bada480876604109e3a9684eb5459ca666aafddb673ca667374cc06599224a633035d4bf533e4954d9594d944bfc41d9c1be3c742a452327a132eae027876e062273c2f6e3dd1889812b2080f4bca1709032220e957b990db7cb81dac67e4d17d83bae8a53059dd09cddcc8b8a4527d1340cf99ab546ec608f754bc0874e8f149690d7d1c2599c845c81539a2c3c7be675020d67cdbecf2a492c57d3d5077fe9ae804c55bad4f7fc8903c2ae551581b0eeac103bc450398f8901004237ae18287e629263c90a26ab02facce62d661b0e13ab07046f694c0859a26b6d783b76869d376bf1577980ef547af9d3fd689cdf146fb1be3212e22478a57caec458ec6e32e165d7bf099d7d437e4f8f9ed18a00b4fca7fb437b18784c48809ef3a0a5ad8d32b1f0847c9864491e62b6f355cd9230b935e67fc221784f08d23318555290e32dde0ef5d5335e18b26a4db1504d4e6772d938a50a1d7d33d3db3f02a184b00d5fc9b4b38f0d948d84d624e448cf2d2390e464b35049ce2691a4e934243d4e639bba0ba2cb829f15613f41b38549fc7dddc7253cf216c8c90b33c55f030a176f122d0aaedcd86695ca9f2fe11dd1338a3db8d99262fd881a827bee62fcdeeb04234efc817b83f30d929aaa5f3bc6422b3f211391b0fbb24c17b4b8f624d32f7f932ec5fec9a9943d485bf9779fc5a9391a2f5f55a4d523fa6ae76cd99d85a6c7afe18bad2e9b0773057810d1893ea519718719c26109eee32ede29f848e4e9ed5ff94d6f9b021206cddefe052dc60f967fcf3ed3b64c72c5673ffccde0d3b67e71673b26c8426bab41b4aafcdec91a4dfe9c1d8dfe526ed93300518fb6c98fc9dfcfe3317ab43b40eb5aaf37a1d13b09657f8f7575bb207e53ee0443804897343bc03544074ec7129ebacf38061eca6d5dbf4b1e379a9b0bea78da7ed998f0834895137d772854dfa419a7625f54f90fc5ac1978285f7fc04d2b7020b4a69fb59649d8eb94339ee709f050ab2a503f630aa8b9ad1fd0a749fc75cb8c029085275183a990068004701e762cce575edcb0b061dcd7a79782c06b76880eb85f813dc27f84e3fe531036cef7e3db01c1e32442402717a915a3850d4334619ca90825c51ec22ada66e96c61a85839372cdc1ae7b4c379373168cd1bd3975b4db0aaa1c9bc46140b51c76308f9b42cbbe2d479eeebcab6e4545d615978033bd8e4161cce6947a8f825cfe4712de4593955f41745180113d561b69eddbbf7964ef822afc8e9d2e3ec686f5fdd820067d8aacd9ca1ffedbf5e2cea96bad9d0745bde5c6ec15f259dac8be224f8d62770a491549b9605dd3bab9f586eff9f7bd064950010948e576e21bae648a381d0950cb5d0987fd493238c430209e982558825eabc21a1a984f3b60a715bd40446afef83feb2616c1ce5ea830edbe732b91214f2d49689af711bdaa2ca9188466adcf576b67e6fa6258d1cf981f62c16fadb347d2aeface554d8654dcdf715478f211f9c60002c78c752a411528afcde8645f103986bc1459bdf499a8dfa526f604ca1f1fa4045f4037d4c7ab25f4b4d900b7be4719a0b43b8618cf08b77c3b4ccbeba48425ef2f91483fb0557f90cb02808b62cba99e96b64e687f7210dbad08480f1ade08816117a056c507c0872e24e5f6363957c4b42af836eaa96cb3ea8e4c589915df3d4941dcedab1f0051c5785474e03aaa7a6311f50931e196b188d0da88fed09e63a823d033d87175512579e9048b8852a16f5994f5ea3a7f274ee3696c295bcdc1a3c6523075324bf58a4586040a36ef4755fbe1bd03c1851373e914c92068be8256b60008e31a86c06be770f30dc4eebaf91d4c887a40f8431c73ad6fc19bb8d86b451641948dcd3ff6f9321e43b199d9dff2b89aa4e35222c7c25345f5dc6cf928a8f66ffc9a128e61916b332e400f626a84094143a74e1d5f67a4fe13425768f78ddea783d702c61b360254f61922043686cfdbab4085b85fe88f82bac120be20930a078445f173e6946b85929ee14bf4d4f5c84cc2955d5bca1a53cca85c10e1ba8a8c054d6db0354438ef11bdbc78456a419d4cc2627e2a55f291a992942d71d9de70cbf36595f2996ccdfad6cd2bc5a06b3bf010052a54667323763077b7c464686deebfe085e61ea4e9a8dd535d3b76516beca77deed2d2788f12a3f9eea348ca54b59df6182c9001c4aa76449608b0a48011e01de37e8a7f5133b19f1701ac56eb134ac6858cc90d28ee4af3901c50564663b7e1f8932279a8252f81b6dfc47ef57b7827cad8c310c9d381147d72081f0a52db0de5af92e653becb7268dd5861c3d721f1dd8aceb3463698078b685d46abcecc0b19525637e2942d1e0c6baf706b2959f231fcab74b3bb3d1f6b0676c65c29f22ce10366f905807363ae859149f957ea6475bcb69c8629c37fb227c58aa1d4710f3bab946583cdda4d0373f2671f7d420654e74c426cca26251e795e17ecb81089a02b86910922c855c7ead2b94f7e9bbbab8a7b76f0013762f475f5165ff4115499b56553afaad6a908c63ef0e19dcaa828a9032148e6c8f4e7f3e15b5574f7cd12b5b5b42ede45be1d5e7fb359efeed279f88f4898a389366b7071af2c2a3cafcae59c6e1fc10f90033993168f889b6600cb75fa6cef6da1c72de7ed44d178022088ddff1fa7fe67c2ff485ef7ac533534d54f26fcbb3d1dcc774a04a7686f5983e0c8043f85448c069fcd510b48c35a35fce85d36cf49da4812a85020553baa645d5564fd46edada20ea58330f18764ab2a00f6a36f177edb604642699b4e86e1ad37671878b1b6181ee05100208e2d336db04ce78b7b1b800112a4480756821ed7fc695c693c33315ed2e7cdec05cae3931c22be649f6e07b06343f580dbc7b935b088ad76bc8e9e58765ac104741e312bfc0e3773ea681c715f93f985da07aed1967c5e9b6cb8e9b6fb03c0bd62975f70d91ca77ff6a64a46a45abb10182</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<link href="/css/hbe.style.css" rel="stylesheet" type="text/css"><script data-swup-reload-script type="module" src="/js/plugins/hbe.js"></script>
+<script data-swup-reload-script type="module">
+import {initHBE} from "/js/plugins/hbe.js";
+    initHBE();
+</script>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 数据删除</li>
+        <li><strong>Author:</strong> Getaway_Car</li>
+        <li><strong>Created at
+                :</strong> 2026-01-01 19:10:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2026-04-20 14:45:10
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://getawaycar1024.github.io/article/数据删除/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/article/CF2183E-LCM-is-Legendary-Counting-Master-%E9%A2%98%E8%A7%A3-%E8%A2%AB%E8%B7%AF%E7%94%B1%E5%99%A8%E5%81%9A%E5%B1%80%E4%BA%86/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">[CF2183E] LCM is Legendary Counting Master 题解 &amp; 被路由器做局了</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/article/%E7%A5%AD%E6%88%91%E7%9A%84-2025/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">祭我的 2025</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        (function() {
+            const containerId = "giscus-container";
+            const mapping = "pathname";
+            const lang = "en";
+            const inputPosition = "top";
+            const reactionsEnabled = "1" === "1";
+            const emitMetadata = "1" === "1";
+            const strict = "0" === "1";
+            const loading = "lazy";
+
+            const getTerm = () => {
+                if (mapping === "pathname") return location.pathname;
+                if (mapping === "url") return location.href;
+                if (mapping === "title") return document.title;
+                if (mapping === "og:title") {
+                    const ogTitle = document.querySelector("meta[property='og:title']");
+                    return ogTitle?.content || document.title;
+                }
+                return "";
+            };
+
+            const sendUpdate = () => {
+                const iframe = document.querySelector("iframe.giscus-frame");
+                if (!iframe) {
+                    return;
+                }
+
+                const setConfig = {
+                    theme: "preferred_color_scheme",
+                    lang,
+                    inputPosition,
+                    reactionsEnabled,
+                    emitMetadata,
+                    strict,
+                };
+
+                if (mapping !== "number") {
+                    const term = getTerm();
+                    if (term) {
+                        setConfig.term = term;
+                    }
+                }
+
+                iframe.contentWindow.postMessage(
+                    { giscus: { setConfig } },
+                    "https://giscus.app",
+                );
+            };
+
+            const loadGiscus = () => {
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    return;
+                }
+
+                const iframe = container.querySelector("iframe.giscus-frame");
+                if (iframe) {
+                    sendUpdate();
+                    return;
+                }
+
+                if (container.dataset.giscusInit === "true") {
+                    return;
+                }
+
+                const giscusConfig = {
+                    src: "https://giscus.app/client.js",
+                    "data-repo": "getawaycar1024/getawaycar1024.github.io",
+                    "data-repo-id": "R_kgDONTsbfg",
+                    "data-category": "Announcements",
+                    "data-category-id": "DIC_kwDONTsbfs4CuIU-",
+                    "data-mapping": mapping,
+                    "data-strict": "0",
+                    "data-reactions-enabled": "1",
+                    "data-emit-metadata": "1",
+                    "data-theme": "preferred_color_scheme",
+                    "data-lang": lang,
+                    "data-input-position": inputPosition,
+                    "data-loading": loading,
+                    crossorigin: "anonymous",
+                    async: true,
+                };
+
+                const giscusScript = document.createElement("script");
+                for (const key in giscusConfig) {
+                    giscusScript.setAttribute(key, giscusConfig[key]);
+                }
+                container.appendChild(giscusScript);
+                container.dataset.giscusInit = "true";
+            };
+
+            const runGiscus = () => {
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    return;
+                }
+
+                if (container.querySelector("iframe.giscus-frame")) {
+                    sendUpdate();
+                    return;
+                }
+
+                loadGiscus();
+            };
+
+            runGiscus();
+        })();
+    </script>
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">数据删除</div>
+		
+
+	</div>
+</div>
+	</div>
+	
+</div>
+
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2026&nbsp;&nbsp;<i class="fa-regular fa-computer-classic"></i>&nbsp;&nbsp;<a href="/">Getaway_Car</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        75 posts in total
+                    </span>
+                    
+                        <span>
+                            85.4k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.9.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="fa-regular fa-arrow-up"></i>
+		</li>
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container" role="dialog" aria-modal="true" aria-label="Image viewer">
+	<button class="image-viewer-close" type="button" aria-label="Close">
+		<i class="fa-solid fa-xmark"></i>
+	</button>
+	<button class="image-viewer-prev" type="button" aria-label="Prev">
+		<i class="fa-solid fa-chevron-left"></i>
+	</button>
+	<div class="image-viewer-frame">
+		<img src="" alt="">
+	</div>
+	<div class="image-viewer-exif-panel hidden absolute left-1/2 bottom-20 -translate-x-1/2 w-[min(92vw,420px)] max-h-[60vh] overflow-hidden rounded-2xl bg-background-color-transparent-80 p-4 text-left shadow-redefine-flat backdrop-blur-md" role="dialog" aria-label="EXIF" aria-hidden="true">
+		<div class="flex items-center justify-between mb-3">
+			<span class="text-sm font-semibold text-first-text-color">EXIF</span>
+			<button class="image-viewer-exif-close flex h-8 w-8 items-center justify-center rounded-full bg-background-color-transparent-80 text-first-text-color transition hover:bg-background-color-transparent-40" type="button" aria-label="Close">
+				<i class="fa-solid fa-xmark text-[0.65rem]"></i>
+			</button>
+		</div>
+		<div class="image-viewer-exif-cards grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto pr-1 scrollbar-hide"></div>
+		<template class="image-viewer-exif-card-template">
+			<div class="rounded-lg bg-background-color-transparent-40 px-3 py-2">
+				<div class="image-viewer-exif-card-header flex items-center gap-2 mb-1">
+					<i class="image-viewer-exif-card-icon fa-solid fa-circle-info text-xs text-third-text-color"></i>
+					<div class="image-viewer-exif-card-title text-xs font-semibold text-first-text-color"></div>
+				</div>
+				<div class="image-viewer-exif-card-items flex flex-col gap-1"></div>
+			</div>
+		</template>
+	</div>
+	<button class="image-viewer-exif-toggle flex items-center gap-2 hidden absolute left-1/2 bottom-6 -translate-x-1/2 rounded-full border border-border-color bg-background-color-transparent-80 px-4 py-2 text-first-text-color backdrop-blur-md transition hover:bg-background-color-transparent-40" type="button" aria-label="EXIF" aria-expanded="false">
+		<i class="fa-solid fa-circle-info text-xs"></i>
+		<span class="text-xs font-semibold uppercase tracking-wider">EXIF</span>
+	</button>
+	<button class="image-viewer-next" type="button" aria-label="Next">
+		<i class="fa-solid fa-chevron-right"></i>
+	</button>
+</div>
+
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    window.swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+
+    window.dispatchEvent(
+        new CustomEvent("redefine:swup:ready", {
+            detail: {
+                swup: window.swup,
+            },
+        }),
+    );
+</script>
+
+
+
+
+	
+<script src="/js/build/main.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+
+
+
+
+
+    
+        
+<script src="/js/build/libs/mermaid.min.js"></script>
+
+    
+
+
+
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+
+	
+</body>
+
+</html>
