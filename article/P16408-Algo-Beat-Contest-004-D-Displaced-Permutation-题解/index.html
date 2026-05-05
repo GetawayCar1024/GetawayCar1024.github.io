@@ -78,25 +78,26 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://getawaycar1024.github.io/article/警示后人/"/>
+    <link rel="canonical" href="https://getawaycar1024.github.io/article/p16408-algo-beat-contest-004-d-displaced-permutation-题解/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
     
         
-        <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+        <meta name="description" content="简单题。 首先容易想到对整个序列询问  次即可还原出整个排列，于是只需要在剩下  次询问以内将排列排序。 发现左移不太好做，容易想到对一个区间操作后第一个元素跑到了最后，因此按照  到  的顺序复原即可。 询问次数 ，边询问边模拟即可，时间复杂度 。 Code1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta property="og:type" content="article">
-<meta property="og:title" content="警示后人">
-<meta property="og:url" content="https://getawaycar1024.github.io/article/%E8%AD%A6%E7%A4%BA%E5%90%8E%E4%BA%BA/index.html">
+<meta property="og:title" content="P16408 [Algo Beat Contest 004 D] Displaced Permutation 题解">
+<meta property="og:url" content="https://getawaycar1024.github.io/article/P16408-Algo-Beat-Contest-004-D-Displaced-Permutation-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Getaway_Car&#39;s Blog">
-<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:description" content="简单题。 首先容易想到对整个序列询问  次即可还原出整个排列，于是只需要在剩下  次询问以内将排列排序。 发现左移不太好做，容易想到对一个区间操作后第一个元素跑到了最后，因此按照  到  的顺序复原即可。 询问次数 ，边询问边模拟即可，时间复杂度 。 Code1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
-<meta property="article:published_time" content="2026-04-12T11:45:42.000Z">
-<meta property="article:modified_time" content="2026-04-12T12:17:10.823Z">
+<meta property="article:published_time" content="2026-05-02T09:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-05T08:28:04.847Z">
 <meta property="article:author" content="Getaway_Car">
-<meta property="article:tag" content="记录">
+<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="交互">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
     
@@ -110,7 +111,7 @@
     
     <title>
         
-            警示后人 | Getaway_Car&#39;s Blog
+            P16408 [Algo Beat Contest 004 D] Displaced Permutation 题解 | Getaway_Car&#39;s Blog
         
     </title>
 
@@ -585,7 +586,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">75</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">76</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -608,7 +609,7 @@ mjx-container[display="true"] + br {
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">警示后人</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">P16408 [Algo Beat Contest 004 D] Displaced Permutation 题解</h1>
 			</div>
 			
 		</div>
@@ -627,15 +628,15 @@ mjx-container[display="true"] + br {
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2026-04-12 19:45:42</span>
-        <span class="mobile">2026-04-12 19:45:42</span>
+        <span class="desktop">2026-05-02 17:00</span>
+        <span class="mobile">2026-05-02 17:00</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-04-12 20:17:10</span>
-            <span class="mobile">2026-04-12 20:17:10</span>
+            <span class="desktop">2026-05-05 16:28:04</span>
+            <span class="mobile">2026-05-05 16:28:04</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -649,7 +650,17 @@ mjx-container[display="true"] + br {
                     
                         
                         <li>
-                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
                         </li>
                     
                     
@@ -663,7 +674,11 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        <a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E4%BA%A4%E4%BA%92/">交互</a>&nbsp;
                     </li>
                 
             </ul>
@@ -673,7 +688,7 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>14 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>248 Words</span>
         </span>
     
     
@@ -693,42 +708,30 @@ mjx-container[display="true"] + br {
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			
-<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="bc56d743fc63e095622904785bda45024db0776d7aa2912d5ed8a1d918118884">e6d0dcc16b4665ff35c922d5a9b8fa489ed97238f99cb0710f3b844d5bf0f9fdbcd6e503bb18e2482cd559908236d603c577d4be33693d2c42ecb815f045223405f20864b4f3a82e796dc42755348ee5f8806d42320bf66c4d7afdd13779f0577bbecabbb0ada01f6788b396ff63259128031b13844e0b3f3f549dc1de4a6d02c078928cc05fedd57d094ac3de8744e54ab5e1a834c12d8c50c2a9c1e6bd2e5abaedd3f2d61506e34d81fb688fd61132d01df4449e6d767dad8af3e6f7ae70bf3208349e232005a59c80a2a5d936d5154107630008f7a77d10a423a65878e433d90c11985ef4b32c8c25407fe7da9455bafcf5e1749fad53247ebc326d49b2eec46ec72c5c0eaeea139da3f83a2b20381bc0a4bf5a0c94cff94825ae9846fad42d1bc4f81694c32abc4c0eccffa3fd798743aa7eab43afba059a15bae25bd6d466ef0265ad2b013e0db7c67aed0386f3531f6be97f0f622c4ca7bb505579fb079c40e781a0c21af1a3799d402ac4298026e524ab916653e38b2272c3ec435e5dfe2487710e650d711b46e544ba7d6c9d88be415f397b4d8909768ffd8b909c906685b5d1846dad3987d0d747c5863396abf2aff43dc1def33c51a8d9cef0d9673e4b3908eec178b3385d2c551e9b40723624acf9f5dd8670d100030e180ad006f183e5acc2c150a837e734a57a3a65f2514a5cc7e59fc7b324df8d8ecf499c9d8253633b046ceeead5797dc31eb7dc89b49b66dded42c350745c9d2a67c1ace56aa00ef3fef23ba53fa20a0df82c06b95f7179bc9053ea868f70fbc9031cda5c5efd1490d7725052451e15822752e12d10facf013bafbe1a48cdcc1ffbb26bc292725f7942a98ce3865aea96b2ecf04370fcfb68f9d688581e1ef68e800614f2867bf6cbbf36639a268256466cc6c630581322333afa4871e6c46af5faa0496f163f0a4767f143e1002afce035e6366f276a61118a098d6ae74e13dd4159577152d084d0dd39ae7535062d52c38222179c33b2d47d215537af5c77bb8f325cec93be40bc388a90821333d372c38716a96fdbf0ae21c9c4a88e2da8b4673d590548f0e619af929c6706ac05af94dbccaac82bfdf25282aacebeeee993c96462bb5c7ac318dc083592dc0d5726bd5cad9446c4e7c99b6956dffbab5c59ff08cecf32ab3214ab71e9ec0c8570d07badb25efab062f0f05b959a00d277b916f5b68b1cc12c6a1ce53385fa344a6ff9221eea8c5a2e8e34c758bf2d47f4ad363440cff99c0fb3bd83597a276f58fb7884f588efcb643dca60b2dcce6387ed0980c3bc</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<link href="/css/hbe.style.css" rel="stylesheet" type="text/css"><script data-swup-reload-script type="module" src="/js/plugins/hbe.js"></script>
-<script data-swup-reload-script type="module">
-import {initHBE} from "/js/plugins/hbe.js";
-    initHBE();
-</script>
-
+			<p>简单题。</p>
+<p>首先容易想到对整个序列询问 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 次即可还原出整个排列，于是只需要在剩下 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 次询问以内将排列排序。</p>
+<p>发现左移不太好做，容易想到对一个区间操作后第一个元素跑到了最后，因此按照 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 到 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.507ex" role="img" focusable="false" viewBox="0 -666 500 666"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container> 的顺序复原即可。</p>
+<p>询问次数 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.489ex" height="1.532ex" role="img" focusable="false" viewBox="0 -666 1100 677"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>，边询问边模拟即可，时间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewBox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>。</p>
+<details class="relative my-4 border border-border-color bg-second-background-color rounded-md  green" data-header-exclude=""><summary class="px-4 py-2 rounded-md shadow-[0_0_2px_0_var(--shadow-color-1)] cursor-pointer not-markdown"><i class="fa-solid fa-chevron-right"></i>Code</summary><div class="content p-4 "><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, p[<span class="number">1005</span>], x;</span><br><span class="line">string s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> _ = <span class="number">1</span>; _ &lt;= n; ++_) {</span><br><span class="line">		cout &lt;&lt; <span class="string">"? 1 "</span> &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">		x = p[<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; ++i) {</span><br><span class="line">			p[i] = p[i + <span class="number">1</span>];</span><br><span class="line">		}</span><br><span class="line">		p[n] = x;</span><br><span class="line">		cin &gt;&gt; s;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) {</span><br><span class="line">			<span class="keyword">if</span>(s[i - <span class="number">1</span>] == <span class="string">'1'</span>) {</span><br><span class="line">				p[i] = i;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = n; i; --i) {</span><br><span class="line">		x = <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= i; ++j) {</span><br><span class="line">			<span class="keyword">if</span>(p[j] == i) {</span><br><span class="line">				x = j;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		cout &lt;&lt; <span class="string">"? "</span> &lt;&lt; x &lt;&lt; <span class="string">' '</span> &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">		cin &gt;&gt; s;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = x; j &lt; i; ++j) {</span><br><span class="line">			p[j] = p[j + <span class="number">1</span>];</span><br><span class="line">		}</span><br><span class="line">		p[i] = i;</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; <span class="string">"!"</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+</div></details>
 		</div>
 
 		
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 警示后人</li>
+        <li><strong>Title:</strong> P16408 [Algo Beat Contest 004 D] Displaced Permutation 题解</li>
         <li><strong>Author:</strong> Getaway_Car</li>
         <li><strong>Created at
-                :</strong> 2026-04-12 19:45:42</li>
+                :</strong> 2026-05-02 17:00:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2026-04-12 20:17:10
+                    :</strong> 2026-05-05 16:28:04
             </li>
         
         <li>
-            <strong>Link:</strong> https://getawaycar1024.github.io/article/警示后人/
+            <strong>Link:</strong> https://getawaycar1024.github.io/article/P16408-Algo-Beat-Contest-004-D-Displaced-Permutation-题解/
         </li>
         <li>
             <strong>
@@ -750,7 +753,11 @@ import {initHBE} from "/js/plugins/hbe.js";
 		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
 			
 			<li class="tag-item mx-0.5">
-				<a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>&nbsp;
+				<a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E4%BA%A4%E4%BA%92/">#交互</a>&nbsp;
 			</li>
 			
 		</ul>
@@ -763,9 +770,9 @@ import {initHBE} from "/js/plugins/hbe.js";
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/article/%E8%AE%B0%E6%A2%A6/">
+				<a class="next" rel="next" href="/article/diary/2026/05/">
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item truncate max-w-48">记梦</span>
+						<span class="post-nav-title-item truncate max-w-48">2026 年 5 月日祭</span>
 						<span class="post-nav-item">Next posts</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -914,7 +921,7 @@ import {initHBE} from "/js/plugins/hbe.js";
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">警示后人</div>
+		<div class="page-title">P16408 [Algo Beat Contest 004 D] Displaced Permutation 题解</div>
 		
 
 	</div>
@@ -943,11 +950,11 @@ import {initHBE} from "/js/plugins/hbe.js";
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        75 posts in total
+                        76 posts in total
                     </span>
                     
                         <span>
-                            85.4k words in total
+                            86.9k words in total
                         </span>
                     
                 </p>

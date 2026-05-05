@@ -615,7 +615,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">75</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">76</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -708,7 +708,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">75</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">76</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -723,6 +723,88 @@ mjx-container[display="true"] + br {
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ARC205D-Non-Ancestor-Matching-%E9%A2%98%E8%A7%A3/">
+                            [ARC205D] Non-Ancestor Matching 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            赛时没打这场 ABC。
+设  的重儿子是 ，以  为根的子树为 ， 的大小是 ， 中最多能选出  个点对。定义点  是好的，当且仅当 。接下来分点  是不是好的分类讨论：
+
+若点  是好的：显然有 。
+若点  不是好的：我们尝试让  成为好的。具体地，我们可以在  中先选取一些点对，并且从  中删去这些点，使得  减小，从而使点  成为好的。在  中最多可以选取  个点对，所以  的最小值是...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Sep 08 2025 12:00:00 GMT+0800">
+                
+                    2025-09-08
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ARC205D-Non-Ancestor-Matching-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC205D] Non-Ancestor Matching 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1495,95 +1577,6 @@ Case 4.1：路径长度为
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/P3960-NOIP-2017-%E6%8F%90%E9%AB%98%E7%BB%84-%E5%88%97%E9%98%9F-%E9%A2%98%E8%A7%A3/">
-                            P3960 [NOIP 2017 提高组] 列队 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            本文提供一种动态开点线段树做法。
-
-
-这道题写的时候调了很久，原因是 while(q--)，而处理询问时又用到了 。
-
-另外，sjx 在讲义中这样写：
-
-为了解决空间问题，我们可以离线所有查询、删除和追加操作，然后 one by one 用线段树处理每个序列，每一个处理完后回滚到初始状态，再处理下一个。
-
-为了解决空间问题，直接动态开点不就是了。
-
-我们发现，每一行是相对独立的，所以考虑单独...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Jul 14 2025 20:00:00 GMT+0800">
-                
-                    2025-07-14
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/P3960-NOIP-2017-%E6%8F%90%E9%AB%98%E7%BB%84-%E5%88%97%E9%98%9F-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P3960 [NOIP 2017 提高组] 列队 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1614,11 +1607,11 @@ Case 4.1：路径长度为
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        75 posts in total
+                        76 posts in total
                     </span>
                     
                         <span>
-                            85.4k words in total
+                            86.9k words in total
                         </span>
                     
                 </p>
