@@ -733,7 +733,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">76</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -826,7 +826,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">76</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -863,7 +863,7 @@ mjx-container[display="true"] + br {
                     <div class="home-article-content markdown-body">
                         
                             
-                            对于设置密码的文章，你需要正确回答问题才能阅读。
+                            对于下列文章，你需要正确回答问题才能阅读；其余加密的文章是未公开文章。
 每篇文章包含了若干个问题，每个问题的答案要么全为数字，要么全为小写英文字母。密码中你需要依次输入每个问题的答案，用 , 分隔。
 
 自述
@@ -872,7 +872,7 @@ mjx-container[display="true"] + br {
 我初一所在班级？若干个数字。
 我转班主要因为谁？人名拼音首字母。
 我初二上所在班级？若干个数字。
-我初二下所在班级的班主...
+...
                         
                     </div>
 
@@ -1091,6 +1091,186 @@ mjx-container[display="true"] + br {
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
+                        <a href="/article/P16600-SYSUCPC-2025-Perfect-Life-%E9%A2%98%E8%A7%A3/">
+                            P16600 [SYSUCPC 2025] Perfect Life 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            有点 /bb 啊。
+设 。首先容易想到  DP，即设  表示  的后缀是 ， 的前缀是 ，是否存在 。注意到 ，因此猜测正解可能是在暴力 DP 的基础上压位去掉一维。
+这东西具体怎么实现呢？因为  与  是相对独立的，只需要用  和  判断一下是否有 ，记作 ，剩下的就是  和  独立的转移了。两者本质相同，这里讨论  的转移。
+定义  时有 。讨论一下合法的 ：
+
+：即当前位置不被覆盖，有...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat May 23 2026 22:00:00 GMT+0800">
+                
+                    2026-05-23
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/DP-%E4%BC%98%E5%8C%96/">DP 优化</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/P16600-SYSUCPC-2025-Perfect-Life-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P16600 [SYSUCPC 2025] Perfect Life 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/P16608-SYSUCPC-2025-Larger-or-Smaller-%E9%A2%98%E8%A7%A3/">
+                            P16608 [SYSUCPC 2025] Larger or Smaller 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            不难吧，不到 20min 就做完了，强烈谴责旁边的 @O_v_O 一开始不相信我的做法是对的。
+首先可以直接把  的位置去掉并钦定 ，输出答案的时候乘上一个  即可。于是容易设出  表示填了 ，其中有  个位置满足  的方案数，有 。考虑转移，初始令 ，发现我们可以选择一个位置  并交换  与  的值。讨论  与  的大小关系：
+
+：交换后有 ，有  种方案且 ，因此 。
+：我们钦定了 ，因...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat May 23 2026 21:00:00 GMT+0800">
+                
+                    2026-05-23
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/P16608-SYSUCPC-2025-Larger-or-Smaller-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P16608 [SYSUCPC 2025] Larger or Smaller 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
                         <a href="/article/P16408-Algo-Beat-Contest-004-D-Displaced-Permutation-%E9%A2%98%E8%A7%A3/">
                             P16408 [Algo Beat Contest 004 D] Displaced Permutation 题解
                         </a>
@@ -1186,7 +1366,22 @@ Code1234567891011121314151617181920212223242526272829303132333435363738...
                     <div class="home-article-content markdown-body">
                         
                             
-                            
+                            树上处理技巧Link1 Link2
+
+A - Lomsat gelral
+树上启发式合并板子。
+
+B - 线段树合并 / [Vani 有约会] 雨天的尾巴
+线段树合并板子。
+
+E - 重链剖分 / 树链剖分
+树剖板子。
+
+F - 语言
+可以转化成  个矩形求面积并。
+
+I - LCA
+有趣的 trick。注意到  的一种求法是，对于  中的每个 ，将  到  的路径加一，再查询  到  的路...
                         
                     </div>
 
@@ -1338,7 +1533,6 @@ Code1234567891011121314151617181920212223242526272829303132333435363738...
                         
                             
                             数据结构专题 2Link
-专题名字有盒子，比赛 ID 的后两位是「我生日（MMDD）」模「我出生月份（MM）的平方」。
 
 A - SUM and REPLACE
 板板势能线段树。
@@ -1349,7 +1543,8 @@ B - 带修莫队 / [国家集训队] 数颜色 / 维护队列
 C - 一个简单的询问
 四维莫队即可。也可以差分一下变成二维。
 
-D - 访问 Vi...
+D - 访问 Visits
+哦我有点烫了。考虑到  较大时跳的步数很少，于是可以暴力地跳，利用倍增或长剖；当  ...
                         
                     </div>
 
@@ -1495,176 +1690,6 @@ D - 访问 Vi...
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/%E8%81%94%E5%90%88%E7%9C%81%E9%80%89-2026-%E6%B8%B8%E8%AE%B0/">
-                            联合省选 2026 游记
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            还是写一篇正经的游记，主要是 @O_v_O 想看。
-本文中的排名都是指在 SC 范围内。
-省流：三倍队线外一名，欢迎来核爆我。
-2026.3.7 之前CSP-S2025 与 NOIP2025 都考得不好，怎么会是呢。
-我承认我的水平远不如同省同年级的许多大神，但我不认为我的水平也像这两场比赛的分数一样平庸。甚至在 9 月，我的教练还希望（有点开玩笑的语气）我 E 类。可我在正赛中就从未展示出...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Mar 13 2026 12:00:00 GMT+0800">
-                
-                    2026-03-13
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%9C%81%E9%80%89/">省选</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/%E8%81%94%E5%90%88%E7%9C%81%E9%80%89-2026-%E6%B8%B8%E8%AE%B0/">Read more<span class="seo-reader-text">联合省选 2026 游记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/OI-%E5%B0%B1%E6%98%AF%E4%B8%AA%E5%B7%A8%E5%A4%A7%E7%9A%84-recall%EF%BC%81/">
-                            OI 就是个巨大的 recall！
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            骗你的，不管是 replace 还是 recollector 都是 recall
-考虑到 replace 的一个重排是 recalpe
-recollector 的错误拼写是 recallector
-另外 starmap 的下发 grader 中还有个 recall（指手写 bitset）
-所以 OI 就是个巨大的 recall！
-
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Mar 08 2026 20:00:00 GMT+0800">
-                
-                    2026-03-08
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90/">休闲娱乐</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E7%9C%81%E9%80%89/">省选</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/OI-%E5%B0%B1%E6%98%AF%E4%B8%AA%E5%B7%A8%E5%A4%A7%E7%9A%84-recall%EF%BC%81/">Read more<span class="seo-reader-text">OI 就是个巨大的 recall！</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1695,11 +1720,11 @@ recollector 的错误拼写是 recallector
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        76 posts in total
+                        78 posts in total
                     </span>
                     
                         <span>
-                            86.9k words in total
+                            88.9k words in total
                         </span>
                     
                 </p>
