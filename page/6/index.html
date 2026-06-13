@@ -615,7 +615,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -708,7 +708,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -723,6 +723,182 @@ mjx-container[display="true"] + br {
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ARC203B-Swap-If-Equal-Sum-%E9%A2%98%E8%A7%A3/">
+                            [ARC203B] Swap If Equal Sum 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            首先，必要条件是两个序列的和相同。
+容易发现，操作是可逆的。所以考虑将  和  变为一种相对规则的形式，比如单调。由于单调不降与单调递增是对称的，所以接下来讨论单调不降。
+现在的问题是，能否将一个序列通过若干次操作变为单调不降的。考虑简化操作，变成：
+
+交换 0 与 0 0
+（或）交换 0 1 与 1
+（或）交换 1 0 与 1
+
+注意到，当序列之和（即  的数量） 时，我们一定可以把所有的...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Aug 03 2025 23:30:00 GMT+0800">
+                
+                    2025-08-03
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ARC203B-Swap-If-Equal-Sum-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203B] Swap If Equal Sum 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">
+                            [ARC203A] All Winners 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            手模几个样例之后，容易发现构造：
+
+对于每个队伍，令其中  个人始终获胜，其中  个人始终战败。
+那么对于每一个始终获胜的人，都可以匹配到  个其他队伍的始终战败的人。同理，对于每一个始终战败的人，都可以匹配到  个其他队伍的始终获胜的人。
+当  是奇数时，每个队还各有  个人未被匹配。此时我们只能令其中一个人始终获胜。
+
+综上所述，答案为 。代码就懒得放了。
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Aug 03 2025 23:00:00 GMT+0800">
+                
+                    2025-08-03
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203A] All Winners 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1419,184 +1595,6 @@ Day ...
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ABC407F-Sums-of-Sliding-Window-Maximum-%E9%A2%98%E8%A7%A3/">
-                            [ABC407F] Sums of Sliding Window Maximum 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            一眼题啊。设  左侧第一个不比它小的数的位置为 ，它右侧第一个比它大的数的位置为 。（这样可以保证既不漏算又不重复计算。）那么对于 ，它可能作为最大值的极长区间显然是 。这个区间又被  分为左右两段。设两段中较短的一段长度为 ，较长一段长度为 ，总长度为 。那么  可以带来以下贡献：
-
-；
-
-；
-
-。
-
-
-将第三组式子拆为：
-
-。
-
-于是维护两个差分数组即可。第一个差分数组  维护的实际值就...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon May 26 2025 18:00:00 GMT+0800">
-                
-                    2025-05-26
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ABC407F-Sums-of-Sliding-Window-Maximum-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC407F] Sums of Sliding Window Maximum 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ARC147C-Min-Diff-Sum-%E9%A2%98%E8%A7%A3/">
-                            [ARC147C] Min Diff Sum 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            本文提供一种另类做法。虽然我的代码从实现以及常数上都更劣一些。
-考虑原式的几何意义，即在数轴上的  个区间内各选一个点使得这  个点两两距离之和最小。
-考虑什么时候距离之和最小，显然是所有点都尽量向某一个位置靠拢时。所以钦定中心点，让其它所有点都尽量向这个点靠拢，再暴力计算贡献。时间复杂度 。
-注意到，中心点取在非端点显然时不会更优，所以可以离散化。时间复杂度  。
-现在考虑优化计算原式的过...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon May 26 2025 18:00:00 GMT+0800">
-                
-                    2025-05-26
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ARC147C-Min-Diff-Sum-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC147C] Min Diff Sum 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1627,11 +1625,11 @@ Day ...
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        78 posts in total
+                        80 posts in total
                     </span>
                     
                         <span>
-                            88.9k words in total
+                            91.1k words in total
                         </span>
                     
                 </p>

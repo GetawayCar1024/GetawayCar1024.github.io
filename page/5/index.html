@@ -615,7 +615,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -708,7 +708,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -723,6 +723,177 @@ mjx-container[display="true"] + br {
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CF2150E1-Hidden-Single-Version-1-%E9%A2%98%E8%A7%A3/">
+                            [CF2150E1] Hidden Single (Version 1) 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            看到题后似乎只能想到分治，于是想想该怎么分治。
+考虑 ，设中点为 。假定当前区间内存在答案，并且我们知道  中的每个  在这个区间内的出现次数 。特别地，对于答案 ，我们不得不钦定 。对于  中的每个 ，我们尝试找出它在当前区间内的分布情况（左区间或右区间）。于是根据  分讨：
+
+：需要  次询问。直接跳过。
+：需要  次询问。只需要询问左区间，即可得到它属于左区间还是右区间。
+：最多需要 ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Sep 25 2025 20:00:00 GMT+0800">
+                
+                    2025-09-25
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E4%BA%A4%E4%BA%92/">交互</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2150E1-Hidden-Single-Version-1-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2150E1] Hidden Single (Version 1) 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ABC424G-Set-list-%E9%A2%98%E8%A7%A3/">
+                            [ABC424G] Set list 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            乍一看感觉很难直接 DP，于是考虑先把限制形式化。设当前选的歌曲形成的集合是 ，因为歌曲的顺序并不影响所选集合的合法性，所以 。考虑简化条件，对于一个固定的 ，要最大化前者，显然只需要取较大的几个 。所以自然想到先将  （连带着 ）降序排序，条件就转化为了 ，记后者为 ，它是可以预处理出来的。可以证明这个条件是充要的，一个感性的理解是，我们取出了原集合的每一个子集并判断其是否合法，具体的证明...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Sep 23 2025 20:00:00 GMT+0800">
+                
+                    2025-09-23
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%83%8C%E5%8C%85-DP/">背包 DP</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ABC424G-Set-list-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC424G] Set list 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1434,182 +1605,6 @@ Case 4.1：路径长度为
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ARC203B-Swap-If-Equal-Sum-%E9%A2%98%E8%A7%A3/">
-                            [ARC203B] Swap If Equal Sum 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            首先，必要条件是两个序列的和相同。
-容易发现，操作是可逆的。所以考虑将  和  变为一种相对规则的形式，比如单调。由于单调不降与单调递增是对称的，所以接下来讨论单调不降。
-现在的问题是，能否将一个序列通过若干次操作变为单调不降的。考虑简化操作，变成：
-
-交换 0 与 0 0
-（或）交换 0 1 与 1
-（或）交换 1 0 与 1
-
-注意到，当序列之和（即  的数量） 时，我们一定可以把所有的...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Aug 03 2025 23:30:00 GMT+0800">
-                
-                    2025-08-03
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ARC203B-Swap-If-Equal-Sum-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203B] Swap If Equal Sum 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">
-                            [ARC203A] All Winners 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            手模几个样例之后，容易发现构造：
-
-对于每个队伍，令其中  个人始终获胜，其中  个人始终战败。
-那么对于每一个始终获胜的人，都可以匹配到  个其他队伍的始终战败的人。同理，对于每一个始终战败的人，都可以匹配到  个其他队伍的始终获胜的人。
-当  是奇数时，每个队还各有  个人未被匹配。此时我们只能令其中一个人始终获胜。
-
-综上所述，答案为 。代码就懒得放了。
-
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Aug 03 2025 23:00:00 GMT+0800">
-                
-                    2025-08-03
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203A] All Winners 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1640,11 +1635,11 @@ Case 4.1：路径长度为
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        78 posts in total
+                        80 posts in total
                     </span>
                     
                         <span>
-                            88.9k words in total
+                            91.1k words in total
                         </span>
                     
                 </p>
