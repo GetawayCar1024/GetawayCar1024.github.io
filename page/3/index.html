@@ -615,7 +615,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -708,7 +708,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -723,6 +723,185 @@ mjx-container[display="true"] + br {
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CF2183F-Jumping-Man-%E9%A2%98%E8%A7%A3/">
+                            [CF2183F] Jumping Man 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            只能说我对树形 DP 的理解还是太狭隘了，甚至没想过可以两维都表示点。
+设  表示  子树内的点（不含 ）。求平方是难受的，考虑经典 trick，转化为求有多少对串串相同。设  表示 以  开头的串串 和 以  开头的串串 匹配的方案数，显然它当且仅当  时有值，且有 。因为涉及到子树，所以这个转移在 dfs 序上就是一个矩形的形式，做一下二维后缀和即可，详见代码。时间复杂度 。
+Submi...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Jan 08 2026 16:00:00 GMT+0800">
+                
+                    2026-01-08
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/DP-%E4%BC%98%E5%8C%96/">DP 优化</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">树上问题</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2183F-Jumping-Man-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2183F] Jumping Man 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CF2183E-LCM-is-Legendary-Counting-Master-%E9%A2%98%E8%A7%A3-%E8%A2%AB%E8%B7%AF%E7%94%B1%E5%99%A8%E5%81%9A%E5%B1%80%E4%BA%86/">
+                            [CF2183E] LCM is Legendary Counting Master 题解 &amp; 被路由器做局了
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            菜完了，1:33 才写完 E，然后网络炸了没交上去，1:35 网络又好了，后来才知道是路由器 1:30 自动重启，被路由器做局了。
+因为  单增，所以若  显然无解。考虑一种特殊情况，即 ，此时原式恰好等于 。考虑把  序列看成是从  中删了一些数，那么对于相邻两项  和 ，若不删除它们中间的数，那么贡献是 ；若删除它们中间的数，那么贡献是 。为了让删数过后原式 ，我们需要让 。简单推导得出...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Jan 08 2026 15:00:00 GMT+0800">
+                
+                    2026-01-08
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2183E-LCM-is-Legendary-Counting-Master-%E9%A2%98%E8%A7%A3-%E8%A2%AB%E8%B7%AF%E7%94%B1%E5%99%A8%E5%81%9A%E5%B1%80%E4%BA%86/">Read more<span class="seo-reader-text">[CF2183E] LCM is Legendary Counting Master 题解 &amp; 被路由器做局了</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1394,193 +1573,11 @@ Submission。
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/CF2173E-Shiro-s-Mirror-Duel-%E9%A2%98%E8%A7%A3/">
-                            [CF2173E] Shiro&#39;s Mirror Duel 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            我是智障吧，赛时代码删一行就过了。
-设  表示  在  中的下标。
-若  是奇数，首先把  放到位置  上，期望  次询问。
-容易注意到，对于 ，若 ，即  与  的位置关于中点对称，此时若询问一次 ，一定能把  与  中的一个复原。但是既然都复原了一个，为什么不把另一个也复原了呢？设复原  与  之前的  为 ，那么考虑反复询问  直到  与  复原。算一下这个东西的期望，有 ，解得 ，所...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Dec 07 2025 21:00:00 GMT+0800">
-                
-                    2025-12-07
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E4%BA%A4%E4%BA%92/">交互</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/CF2173E-Shiro-s-Mirror-Duel-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2173E] Shiro&#39;s Mirror Duel 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/diary/2025/12/">
-                            2025 年 12 月日祭
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            DP 专题Link
-
-A - Matching
-唐。
-
-B - 乘积，欧拉函数，求和
-类似 G。
-
-C - 互不侵犯
-唐。
-
-D - Eat The Trees
-插头 DP 模板弱化版。
-
-E - Tree Planting
-屎。考虑分治，对于  较小和较大的情况分开讨论，两种情况的暴力都是好写的，只需要再剪剪枝卡卡常就能过了。
-
-F - 游园会
-DP 套 DP 板子。设  表示文本串的前 ...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Dec 01 2025 00:00:00 GMT+0800">
-                
-                    2025-12-01
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/diary/2025/12/">Read more<span class="seo-reader-text">2025 年 12 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-	<a class="extend prev" rel="prev" href="/page/2/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa-regular fa-angle-right"></i></a>
+	<a class="extend prev" rel="prev" href="/page/2/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
   
     </div>
@@ -1606,11 +1603,11 @@ DP 套 DP 板子。设  表示文本串的前 ...
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        80 posts in total
+                        82 posts in total
                     </span>
                     
                         <span>
-                            91.1k words in total
+                            94.3k words in total
                         </span>
                     
                 </p>

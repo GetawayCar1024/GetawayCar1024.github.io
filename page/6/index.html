@@ -615,7 +615,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -708,7 +708,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -723,6 +723,190 @@ mjx-container[display="true"] + br {
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CF2133D-Chicken-Jockey-%E9%A2%98%E8%A7%A3/">
+                            [CF2133D] Chicken Jockey 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            Upd. 修了一点笔误。
+显然是 DP，并且是稍微想一想就能发现性质的 DP。
+首先攻击的形式一定钦定若干个生物，打死这些生物，使得剩下的生物形成若干个堆叠。对于每个堆叠，我们再从下往上依次一个个打死。容易发现，若  是一个独立的堆叠，需要的攻击次数是 ，减一与加一是因为除了第一个生物都会受到  的跌落伤害。设前缀和数组为 ，那么上式就是 。
+注意到，为了减少攻击次数，我们会尽量增加摔落伤害...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Aug 25 2025 10:00:00 GMT+0800">
+                
+                    2025-08-25
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2133D-Chicken-Jockey-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2133D] Chicken Jockey 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ARC203C-Destruction-of-Walls-%E9%A2%98%E8%A7%A3/">
+                            [ARC203C] Destruction of Walls 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            看到  就显然分讨了。
+
+Case 1：
+此时显然无解。
+
+Case 2：
+此时答案即为从  走到  的方案数，即 。
+
+Case 3：
+即在 Case 2 的基础上再选一堵墙拆除。发现对于任意一条从  到  的路径，都可以选择其余任意一堵墙拆除。故答案为 。
+
+Case 4：
+发现此时又产生了两种情况。一种是路径长度依旧为 ，另一种是路径长度为 。
+
+Case 4.1：路径长度为 
+即在 ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Aug 04 2025 23:00:00 GMT+0800">
+                
+                    2025-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/">分类讨论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ARC203C-Destruction-of-Walls-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203C] Destruction of Walls 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1423,183 +1607,11 @@ CF 3300* 远古题，洛谷黑...
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/%E6%AF%94%E4%BA%9A%E8%BF%AA%E5%90%B9%E6%B0%94%E7%90%83%E5%A4%A7%E6%88%98/">
-                            比亚迪吹气球大战
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            SCCPC 游记Day 前两天才打完 CQ CCPC 并被 jmr 带飞并写了游记，今天就听说 SC CCPC 已经分组了。
-太好了，终于不和 jmr 一组了，这次和 Kaka 一组。（甚至还是二人队伍。）上次连上机的机会都没有呜呜呜。
-Day 诶诶诶，初三的那几天要军训，所以不能和 Kaka 一组了。
-最后和 @O_v_O 大佬讨论了一下，和他与 @maichong 大佬一组了。
-Day ...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Jun 09 2025 12:00:00 GMT+0800">
-                
-                    2025-06-09
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/XCPC/">XCPC</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/ACM/">ACM</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/%E6%AF%94%E4%BA%9A%E8%BF%AA%E5%90%B9%E6%B0%94%E7%90%83%E5%A4%A7%E6%88%98/">Read more<span class="seo-reader-text">比亚迪吹气球大战</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/diary/2025/06/">
-                            2025 年 6 月日祭
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            2025.6.2 问我怎么挂的今天做题。
-
-[洛谷 P2833] 等式 &amp; [SGU 106] The equation
-板子题啊，可是改了好久。主要死在向下、向上取整时没用 double（因为有负数）。
-
-[SPOJ NWERC11A] Binomial coefficients
-这道题自己想到了枚举 ，二分 ，也想到了会爆 long long，可是没想到枚举。
-对于 ，进行二分；...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Jun 01 2025 00:00:00 GMT+0800">
-                
-                    2025-06-01
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/diary/2025/06/">Read more<span class="seo-reader-text">2025 年 6 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-	<a class="extend prev" rel="prev" href="/page/5/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa-regular fa-angle-right"></i></a>
+	<a class="extend prev" rel="prev" href="/page/5/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
   
     </div>
@@ -1625,11 +1637,11 @@ Day ...
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        80 posts in total
+                        82 posts in total
                     </span>
                     
                         <span>
-                            91.1k words in total
+                            94.3k words in total
                         </span>
                     
                 </p>
