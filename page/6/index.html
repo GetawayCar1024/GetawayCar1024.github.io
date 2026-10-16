@@ -607,7 +607,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -615,7 +615,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">87</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">89</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -700,7 +700,7 @@ mjx-container[display="true"] + br {
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -708,7 +708,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">87</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">89</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -723,6 +723,184 @@ mjx-container[display="true"] + br {
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ABC424G-Set-list-%E9%A2%98%E8%A7%A3/">
+                            [ABC424G] Set list 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            乍一看感觉很难直接 DP，于是考虑先把限制形式化。设当前选的歌曲形成的集合是 ，因为歌曲的顺序并不影响所选集合的合法性，所以 。考虑简化条件，对于一个固定的 ，要最大化前者，显然只需要取较大的几个 。所以自然想到先将  （连带着 ）降序排序，条件就转化为了 ，记后者为 ，它是可以预处理出来的。可以证明这个条件是充要的，一个感性的理解是，我们取出了原集合的每一个子集并判断其是否合法，具体的证明...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Sep 23 2025 20:00:00 GMT+0800">
+                
+                    2025-09-23
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%83%8C%E5%8C%85-DP/">背包 DP</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ABC424G-Set-list-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC424G] Set list 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/ABC423G-Small-Multiple-2-%E9%A2%98%E8%A7%A3/">
+                            [ABC423G] Small Multiple 2 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            好题。本题解做法与官方题解相同，但将采用类似 CF Hints 的风格。下文中的  均指将两个十进制数进行拼接， 表示  在十进制下的位数，且默认包含前导零。
+提示 1考虑答案的形式。
+答案答案一定是  的形式，其中允许  有前导零。
+
+
+
+提示 2考虑  与  的限制。
+答案最基础地，有 ，即 。同时有 （均包含前导零），因为一定存在一个  满足：
+
+
+
+
+若  则  这一组解严格劣于  ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Sep 15 2025 20:00:00 GMT+0800">
+                
+                    2025-09-15
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/ABC423G-Small-Multiple-2-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC423G] Small Multiple 2 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1430,176 +1608,6 @@ Case 4.1：路径长度为
                 </div>
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">
-                            [ARC203A] All Winners 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            手模几个样例之后，容易发现构造：
-
-对于每个队伍，令其中  个人始终获胜，其中  个人始终战败。
-那么对于每一个始终获胜的人，都可以匹配到  个其他队伍的始终战败的人。同理，对于每一个始终战败的人，都可以匹配到  个其他队伍的始终获胜的人。
-当  是奇数时，每个队还各有  个人未被匹配。此时我们只能令其中一个人始终获胜。
-
-综上所述，答案为 。代码就懒得放了。
-
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Aug 03 2025 23:00:00 GMT+0800">
-                
-                    2025-08-03
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ARC203A-All-Winners-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC203A] All Winners 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/diary/2025/08/">
-                            2025 年 8 月日祭
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            这个月的日祭直接写一起了，基本都在补题。
-注意到 7 月份后来状态不好。
-
-[洛谷 P4198] 楼房重建
-考虑用一棵普通线段树维护，每个节点维护区间的最大值与区间内好的序列的长度，push up 的时候需要写一个类似于线段树二分的东西，时间复杂度 。
-
-[洛谷 P9824] [ICPC 2020 Shanghai R] Fountains
-复杂度好神秘的一道题。自己写写不清楚，所以干脆看题...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Aug 01 2025 00:00:00 GMT+0800">
-                
-                    2025-08-01
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/diary/2025/08/">Read more<span class="seo-reader-text">2025 年 8 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
     </ul>
 
     <div class="home-paginator px-7 py-5">
@@ -1630,11 +1638,11 @@ Case 4.1：路径长度为
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        87 posts in total
+                        89 posts in total
                     </span>
                     
                         <span>
-                            101.3k words in total
+                            103.1k words in total
                         </span>
                     
                 </p>
