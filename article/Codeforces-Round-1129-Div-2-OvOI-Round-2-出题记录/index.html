@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    
+    <meta name="author" content="Getaway_Car">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes ASAP (before DOMContentLoaded)
+            (function() {
+                const addBodyClass = () => {
+                    const b = document.body;
+                    if (!b) return false;
+                    b.classList.add(theme + "-mode");
+                    return true;
+                };
+
+                // Try immediately
+                if (addBodyClass()) return;
+
+                // Observe until body exists
+                const mo = new MutationObserver(() => {
+                    if (addBodyClass()) mo.disconnect();
+                });
+                mo.observe(document.documentElement, { childList: true, subtree: true });
+            })();
+        })();
+    </script>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://getawaycar1024.github.io/article/codeforces-round-1129-div-2-ovoi-round-2-出题记录/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+        
+        <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round 1129 (Div. 2) &amp; OvOI Round 2 出题记录">
+<meta property="og:url" content="https://getawaycar1024.github.io/article/Codeforces-Round-1129-Div-2-OvOI-Round-2-%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Getaway_Car&#39;s Blog">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
+<meta property="article:published_time" content="2026-03-04T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-11-03T13:17:28.597Z">
+<meta property="article:author" content="Getaway_Car">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://getawaycar1024.github.io/images/Getaway_Car.jpg">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/Getaway_Car.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Getaway_Car.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/Getaway_Car.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Codeforces Round 1129 (Div. 2) &amp; OvOI Round 2 出题记录 | Getaway_Car&#39;s Blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"getawaycar1024.github.io","root":"/","language":"en-US","path":"search.json"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":false,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://cn.vercount.one/js","enable":false,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":true},"open_graph":{"enable":true,"image":"/images/Getaway_Car.jpg","description":null},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Getaway_Car's Blog","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":[{"icon":"/images/logos/luogu.png","url":"https://www.luogu.com.cn/user/725640"},{"icon":"/images/logos/codeforces.png","url":"https://codeforces.com/profile/Getaway_Car"},{"icon":"/images/logos/atcoder.png","url":"https://atcoder.jp/users/Getaway_Car"},{"icon":"/images/logos/github.png","url":"https://github.com/GetawayCar1024"},{"icon":"/images/custom-icon.svg","url":null}],"qrs":[{"icon":"fa-brands fa-weixin","qr":null},{"icon":"/images/custom-icon.svg","qr":null}]}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1","theme":{"light":"default","dark":"dark"}}},"version":"2.9.0","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Blog":{"icon":"fa-regular fa-book","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Friends":"/friends"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur","masonry":{"batch_size":12,"initial_batch_size":24}},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Music":{"path":"https://open.spotify.com/playlist/20WkaSrUnveb21AgJ9wbio","icon":"fa-regular fa-music"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footer":{"runtime":true,"icon":null,"start":"2024/12/07 22:53:20","statistics":true,"customize":null,"icp":{"enable":false,"number":null,"url":null}},"footerStart":"2024/12/07 22:53:20","mermaid":{"style":{"light":"default","dark":"dark"}}};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.i18n = {"search":"Search...","toc":"On this page","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"POWERED BY %s","theme":"THEME","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","post":"Post","posts":"Posts","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","top":"TOP","sticky":"Sticky","go-back-home":"Go Back Home","masonry_loading":"Loading photos...","image_viewer":"Image viewer","close":"Close","exif":{"title":"EXIF","cards":{"camera":"Camera","lens":"Lens","exposure":"Exposure","other":"Other"},"fields":{"make":"Brand","model":"Model","date_taken":"Date taken","lens_model":"Lens","focal_length":"Focal length","focus_mode":"Focus mode","shutter":"Shutter","aperture":"Aperture","iso":"ISO","exposure_program":"Exposure program","exposure_compensation":"Exposure compensation","metering_mode":"Metering mode","flash":"Flash","white_balance":"White balance","latitude":"Latitude","longitude":"Longitude","altitude":"Altitude"},"status":{"loading":"Loading...","no_exif":"No EXIF available","library_missing":"EXIF library not loaded","image_source_missing":"Image source unavailable","unavailable":"EXIF unavailable (blocked by CORS or missing metadata)","flag_unavailable":"EXIF unavailable"}},"about":"About","changelog":"Changelog","links":"Links","link":"Link","friends":"Friends","friend":"Friend","timeline":"Timeline","shuoshuo":"Shuoshuo","bookmarks":"Bookmarks","site_uv":"VISITOR COUNT","site_pv":"TOTAL PAGE VIEWS","read_more":"Read more","wordcount":"Words","min2read":"Mins","status":"Status","runtime":"Blog up for","days":"days","hours":"hrs","minutes":"Min","seconds":"Sec","optimized_by":"and Optimized by Evan","rights":"All Rights Reserved","site_posts":"%s posts in total","site_wordcount":"%s words in total","copyright":{"author":"Author","title":"Title","link":"Link","create_time":"Created at","update_time":"Updated at","license_title":"License","license_content":"This work is licensed under %s.","all_rights_reserved":"All Rights Reserved &#169; %s","public_domain":"This work is in the public domain."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"},"create_time":"Created","update_time":"Updated","expired":"This post is written %s days ago, and the content may not be up to date."};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Getaway_Car&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-book fa-fw"></i>
+                                    BLOG
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/friends">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Blog"
+                        >
+                            <span>
+                                BLOG
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Blog">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/friends">FRIENDS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           target="_blank" rel="noopener" href="https://open.spotify.com/playlist/20WkaSrUnveb21AgJ9wbio"
+                        >
+                            <span>Music</span>
+                            <i class="fa-regular fa-music fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">93</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Codeforces Round 1129 (Div. 2) &amp; OvOI Round 2 出题记录</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] shrink-0 rounded-medium border border-border-color p-px">
+				<img src="/images/Getaway_Car.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Getaway_Car</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2026-03-04 12:00</span>
+        <span class="mobile">2026-03-04 12:00</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2026-11-03 21:17:28</span>
+            <span class="mobile">2026-11-03 21:17:28</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>14 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+        </span>
+    
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			
+<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="acca4671d1afde48df7410d2226254a34531f2a688d687acc2ae466455c2d133">e80c0822ca51dbb19b8fd3c51221456bd3e94664cb75e87a9a7828b62f2dfe20ad5d135e7c7c5b285dbfe840e9c4978aaa288f2381697c38dcad20234843fc6b3175aa1be75d8588077a2c2129492c43a59e6877029a95b7df0985db7b6232305820eb1140f86984b07d7c2d07995b4dc875fb3bc9b0d1e15c47a11e281718e039aedbb782e1ab4d75c4ffa2ff16d798086b2ea515d3f31dc12cc37b3231709ac39556844fc9bce976cfebe6d1d3dd73b0ef4d0dc54c749fceb2923391c22f42ed98db82a736c5e38f61ad7b91b159d03c9987101772967bf1e7294181b29a4c4892d2fab72b7cf511894ce9e4d292b856167bd31a4e2a5cfb6eb97d1092db94ef9c1c242a36be5374f6f4beaeecfa3b6b5ea9e8229bb6f4027ee0734958d0414a80eb9e8977fee7e55b9becdfef90b07f36b4804751d31969739267e88f3ee33cf75f17b84895b682defcdb9989ff7006354701d4dd3c27ea93e1ae60590421cd70249a8838386f7fb46ad3d4f86f6bcf62fc071e20cc375e76b4a96594ea14a85533163fe7038a506dc13c3c01559b47fcc98c0420cf0f120a7345061eb0929ba276aa95cf3918589bae096708b8a0704948ad602b3891d06e7ef6e60cd1fa3c8b195f640dd90bd20ba9aadad98763e53b5d8ae00f90f77e39faef5059a7e1e1091ae1759250ac1cae209552fc7f25e0fa809362f3e1a1cb576e1f933705c8732639804916a391a142226bcd60456d7ca31cf2382a9a7a75bae98e5deb1798b27408ab068a598fc9ac376ed9463d04afb137363b0a80cbcce2e901f2ca583ef1fef35a32031db852d92ae98b35cf934a34d0ae7a12f048622cedc77e7f2889954ef2878332dd8fbe12dabadf2903d20010fc96fb1aaf3bb50f66eb7f5faf1dea1a90d4037a2c5ccbed17032b52f0ccec80fad03431b75c7647b3fba8881bddcca3d4c61da6690e5e8a4e98a30c3bb6ee326586ad97baf83bd0720da316f1ce1022cffdc32793de30fb0cb00ef1a4e61dd45432124cb9058004f2a2e7494f76cc6f04bdf9ef1014fc6d94248ac142bb6256509315719c94cadbd07a2fbb87bb18f90319b7609834ad9d1fc6a52c8c6b17e87bab56a2842bc012c36fb19b56f6f3e940744a3654bef75f6ed230b799d4c6138cbc5446aaabe19d2dbb86e7e1108bf6020eadbfcf354220c8e2db260ec4de15e2d1028a728a0c7e26e5002ec557ad52d2c89afc6e23b06a40ae41ffb4304778f7579d75ee9005854439bf788e4131e6250b1ab6c14d0ff2d50e1b8a57dd556d1917c60bce4770eecdbaa2a0cf0569f20a96014bc8e2c91802c4010623590c9a3c382415da95572ec6688e538332d276c5f40165a6ba1f5616489323fa44a3a94a8a3eb8d25dd170098926b65f0ffe18e1b55c7525ca068772e5292853654bef4f0b81842cf3a95156c82f15bdd3f254d22b7e8c4e03fc4f1184d42a5d8079bfb7b31fc160c99c3fdd5962b4b6c3d3491586ad80e79575b73e6cc52d64a771afb10ceff563f8317aab0f1ec89ec6272ed55d80e7b28143ff5831437d822c967a8592b5148fcced58c87ca79e60b272aa971fc28682850a2acce3f236c480ea5db9e6d1895ce710b28a409457c2b49f108db40d29a075fbcfae3436ac7d198699f68de69a73a1b7d2aa085df6499403b73377f4c36c9bcc3d5cda0ee6dd3bdb7d6a8d0f062de4f82829241685d4358a0da954cf8b237632e461b08a7a6d7622a98916fa4c3a0e80597f8655b2126feb4736541991dab0fb297083e47aa2abbfad61a3a4a3f9ca51602fff5fcd2cb7c628bdca53ff3477a6732cae9f2434660ddc1fae4d3d7e35ea19cf4dd383a86f7124fec7059cca568c479fad45e2013eb540368edac530f8dcfd6dc9bba5c4fba4f107c593f38c6b297b98a0708688b8c197e6378e091a4536e4e453d59ff9147a2a31e28784a9385f199c8f23f6529ac49eb16d633affa239727e9746d6c9c51abc46a213914848220b204eeecce56ca35f76fff70d562cc349a87b7aa5ba97301ccc7cb8b8e77433208051953dcce863fb7cc7ea07c14e5936b88ced587d899b6076b421320b07f0d896e4e972697dd727e0483f00714d1e828f86fa8826fdba4a446175aab68d3248f9296e4d6ff5b1373f8cd78eaf380ff9c4bb409c40533bc31dc174a742666808912ae655fd955ad1374e42bc78f054d7c21084c1b27244017fab6ae5a27dc550e0c6adc6720a3261886fe88251de53c8dc219a8e8e95b4129dc0567f83fcf3e8918ecb30d869fbfa0b11014d995de0e2b6591f63207f26e22b0069d47a0303f0a2977e4c0ec84429ea9433d981b2796c0895cbabb0f19ef99084acc42331b1f784a42f65ed0c60b89812e1bf4cfb5658ab81598abbf2ec29f5103d71833fa797226b1cbe471f80cae2546ef18cee5fb930440df057431dbd8e9e6cb0292e3065665b8ea2f3e7ee3871bc8bade75fcd09829b08484af31ce8df12156138e5bbe844e3e7063c788343afd2355a17c50c0e284bca70c3aa113cf62e13eceb7caacd08ea171c18ce10788a6463d400011d9d5a09d67a4704eb760a784fe67d9592705a7624c2a0d8e8925c4bdabc3f23856e2f7a2861f55bbf83faa63af2d813d2c2aad28cfe77d63f6844f0b9c05cdc54c0a51741f3575891009ab8593c884072facaf45effbd9a06737385fd8057bbe4086eb541b47058fef324372e3b279078554732f174edb9b21a0fad9f65c68129dba247877ebe79c24a323ef28c88385f8f0b5bb5caf06b64f7d61761c57c3a4f02957091ca9a7fad2d6efb36f4c24185154f17a2cf5ba7ee74d223820c577ef11ea345e7e64000c931e9a916e17846b6e61b886e74165fdc44363581a1a328825828254be77454c997437ee3ba526d23295e7eee8b202765b33567ac46013fb39311c512cbba33ddc2064ac7eb5925088a0d19f76b4c580620b822c5c11bba1c1663180e57a7044f3d01fd031bfc46c63295eece1c3d583b4fb0710b03200b61a8e153398e699182bb7e346579c00dd702dce8d7f51c9ce5bba1a3b33e8127c2294367ddcfff0ab497539dbb16db5ff5e95adf5e7ca2ec33059e5a347925ce13d2f6e8e15f76012cbee3a020f4bb334b71710cf4b42946a075da06b5ec0c6db88dd5fed05e85c48642d936deb3b4371ffbe83ca240e1c52ca69efcdbd5ee68d74c2ad965cc91b1b7331adfe0e35b1d3a758040bcf9ac731cd8b41b85ae5b42b47c5d3a136d114658b1eb3ca87ba8c6b0a46ceb39da8c2e3e3ddb38d54ed904c85826965131716546189a5079f8e33246e01f68d130e0f98bcf2a70a5b8fdfed04b797e268d58b2167b0899100e9a93bb1cf79810733e9f492700d4b3ba188e9088df804a7659a893be43b4bd8fd3acef9e20a6686305ebf88cbed586e0992c9c2e9f13818f614a5f7ed05f1b0d8f79da33f4f6b1a81f42dc0d55bd16603860d6b760e2b9e80013751f2c91beac9434d3a6aaa43bdebad60c20c3f9aa4c9489be30f534f295c18addaba8ebc8bfa53a329aaa090493fd16032fb5a404bcd2d222dce59f4b348ec98c3fc0988cd3a50ddc6ce9b9bd4e48f4f63cbe75602737101e06c29c51c568576e4bbe567033a64870e3b5a24dfd26a2e873a15ee3a65b00e809b0061f55ae39722fae9c1521b1548d60bdd113cccecfb654be8cf7e6bf570de105875c0aea05fbafd7fedb3084f435d0c8505bded5cabdb56a3c53e4640ba61171f906ac32b0067be6cfe8620840fc547cd75865b13ae466bf7c817f3ac3aef04dfaeb15a696c37335995e2b1c3b0ae5acccf1b0268ea97edaa5c1b648b6a2cf90f4d821427f2189a0ff8de352998902ef907df65d2444caeb4e63c7b5b8b08100ef42d88c82481512e5727d5f668a7011fa27af4f6cc82891fa5ee20856ee81317365a1aa0aea3dd9c9e7f5c150d2aee95ce370ecc41f4c86b22706a5ef749b10f1c0afa91e512f3f0a58120e31b807356b95a9a7cc59caf0d854e67ad17279825e78effa0448a49cf407494ea693c93d348345f0042dad899942e516224cdaa2cb9961893bae0d61b906bfabc5564ac80edd65bfabcc0eae0c618ebe9e5c5696265178d1247eea6d33fc9c313f808cc91a68cae7710a0c11926ff11754ca8ca601e046a986667842a8acbe586315e857aa61f0d56e413dbdb693f86375787c8416b66384a3bcc8ad3c4a45600453ab3c1c593b8e0906bc27e2f79a70add307a4e0072ffced111f65b5c80c0f4f67604babeecedf2ed62703c5d45f755fbe0c85dc17cabeff899dc4e38c551a2a05405fa5e01efb744bebcc65a19390c4ed2f44e1a41f7c9282d26ae7d137ef743c20ead25de0b17d17128a72bf3c7f2457b770d75dc00412e66b72ee0ae03293dc5d60fbba45833fdcce758732807e348e98486aa7d9955b937476879c1191ec4abec9ccc2b5bbaccba581238d7da1c04417e5ab67b24547f418d86fe31b1d41a9a6fff58ba8b41f1257d3fc1ad62ef9aa4a22d92af039a2f6495e3d0ce9894f8224e3582dbd2fbff02cccd4a49109c694f833c9b81b9e2ae9be5b5b2ed23cabdb04220f3f0a4e23375918a282ce36ccc9f5cdb34bca9a1eca76bea7c9da0f5c346e736c64016126945288b7baf01c96320c4334819a091aa6d29591f0a3c41c9bf645397a07d453c9f1bb37e16ad91c7f17e6cca644841b8570d6acc8d8a86124c89c674d994e66b51803e5e615343baa24837a677d067844cf691db1dd0e60af8fed9b47cea6fb98f1b32e179c93a64ad70925a51cf3fa6b30479f326d5e645ac583b63f79cfc94f976d45d050c977eeb3ec36d4aaf8b03b70a58e5b608c9ede049b6eab7558d7b285b5686c07ca98105bac0f4e2affceb86b04def3942d732b0cd8404e7c67acef5f4fda677bbba7094f7aa9bdf478be718b9679fe8c33e59fbb1be46b8c1dcfc937c15654a525d0dcdc65286ef83797d3addc64f4f83a6f6fa3b7fe3abd2e1c5ea636c65cf6e5a9aee6ea0f99e0a25b5951cf7a4350318d078c5c9866b370621e11cb259c0ac306bbb725668975f312608a402be611ae7920e09204f11deaa193dd04e159146a5bbd99795393e6e40678d9c230aa72e29def70e2185c62b92ad9b4d35f5e0fc8de42ede5007bfb44755925798e15e85b870a6aeea7f49156149b88381b048fd897cddbf2cb84d9f3fcf9f4747292a0e707aa79c99915f4538ceac6350271133e3cddc22c65c2efcf4926258a026cdb971cd99b16524c6c1865cb25349a881678b3e578df99d02ae90514220b3fcaa75a5fdadc462431956308ec46feefcceca7f20654303a5756ddf2a8c29db59003f41c6f3dd9c830c18f4b0dd8307eae89cb07be9886ce775e9ce90037ac887c93ab57d4f1fc8e566f0c45052d4bdef159475f6947930199bfd21d168a9ea654f163be0b71e1fe1daaf9f6066b77e2856896b4caeea216cbc2ba9e304f48715a6477a1a67f1d4af19818d8a2c01b649bb7ffb0c3a22af16891ffa60ee5b6a23e8d885fa98c3ff11cbffa97e4a98df4089cb3363c4e11d5f1830053268edd8bc4f8fa2509d48468689758d75365274322338c074b809aa33e32eb27419b8128fd117055a5edfa631c7eb5e0f08f8ab752ebe11cc7a7b2795187341e582f32c711f68943d62a8fe13c8cddfeab233d96517bc0c112fdd86c37d759cedf9574028e01a073bddaf93c4b1526eeb4964163db5e6dfe67c095cc6d3f8040ff174227443ddef4bb9b2a0f6d0b000edaa2a281c913f8822c806fdcf385eca941cafa0c381b7525d6da29eba144925808441e2caea2692d200606cf6e380f040ba291be0f95889c9cd70916b905aaee416684ef06c6c2675a992a0fddc9d8c0a1f093d3af0ad8716edfb3993c0d15859ab320f3d76eec0a1a8ca3ed31cc5909d92cc968e16c283c537da1773723b6bffd05b7cf64ebfb0cf43ba512ec86a3054b399bfab8e1b89e137a6208d781336c0fd55d39a7318e4b6e726b5c4e0d43a7fd7bb8e87eca9879a45e34e6fd814d978a4687c9ec37a763e1174607d4ba5f193847b448de0a3174c91448fdeb8d93fc2184f0ce0197e4ebefcd5d5509a3690d679ed426b171cb5186969c8ea503a3b7be03595c39fd42a24a2b6dcad4cb62be8de8229a40f8f43e25bcd568c036a1a1ac88716ccc3d76817826ddda1602baafb44cbac056d572b4b7851218c3add4eac18aa105aff5146b9ee78a221833445be76f1405cdb54a02ee45c4787afa4267ca0b4558ae22872d79e1768b8984e3382396148b9ed5758e7ac8abaedb696d8d379df6ae07bfb24f7ea684a95373066d8b65d2403b0cc560c1057fbf9d5cc5800eb9c4daebf6e56dcca9eda546612ab2a0af31bba04c60a9515e4a37d9756e261fbd9c8d8ced421bb017583cd9f5572e2dbf8743a3effde13c1791587a0edaa719078085898a43d1bea662dcf636d15a25b6c7aa59a30696142d237dd05b82bbff8bd8608f884785b49162cfccb7ce3ad356604f98c642f5a739ed1425babf4a40e4dbb3ecdca4da409ca8354ff870e13cbda9cacf94c85bef7d0987aeffb0e56095b2ce724aea1ea7d5b09b5150fa387def489bd5f1af53251b6b9840fb6acecda14df1a085c1a5394cb1e0c39e69bc410b468071cc7c7096165bd0c333a36363a8ce502a17cadcc91b331147aa816c9b62383e8cc9a307813acf23ed3f8086a4569a5cf75c8f879f828636669ba906e2c3e1d7ae0f4ee9e416a027cbec4bc67774a4b312fbeb77c76010f56b02129a46feaef5ef039263e01f60db0803dba0d816db471ad20137689562d4529f12f5d8e3e9ab65a9219e2f97714d0159cbd28d495c6fc62208a0fc5f7147278b415524f9ff59353c769eb21cadec15f6c80019aadad5f6c2ec845738b46df6e9b909525440fe8b226b888cd4aaf067028244ddcff592b9db4887b1c3daba61b0c37716617b5dc57aea17d85ce1df3b95846a01b54862e1e27a8d062705f1a68a9d5cfbe1b0e6fceebfcd6f182b455c869a2a728a85797f77e1c9915932aac59d4f1244169fae0680db11e6a43bc1a4ee7c13ee93a6bacf9515036fa9ccdf5f3f3cf4fba7c602a49cd5f3708b1c6c2e1c9d338b639986ae3231872f7ab5dd7eb9853cb67b89b506a3ffd0df46d1016a3b2cb852dd48848552af9b74d8e0c73e43c268132e68b1a4bef73d6b78066f49673feca86e8048e510582ea3752ffdc8ccdd10dd9c1ca107fce2ccbd9aadbda244394e5aed7e387221fb5f8801aa69da3c7d93b1767268808fe495a13d3da875a0d5533ff01751d7b5441b4a367a55004b4670b41e74c41356775663d062d10606f03f22556f5e900e32486e6535943c68f442caa974b952b048088b16ce66fb3b5a8a2761720412c41c9d72cc84341e0423739872bc7b9160f894203257270d99a8109760e6aa45c17ba0175ea317ff1d18a96143b2e4347fcd4a8a12a030b5241cd0f0246b736c66cebb55c902f424be1af5c3b8c63e5a68314991334ba58108d97d75838dad066792ea3fbb80d23ff4a8cb43d54efbefbf83b39ab6892c47c7d889bc798141b091c3aaad9b8cafd7d08dca88ab2dfd281633fceb73ce5bc75547efa139601c8c8b67f0fe40a66ab58a444e5c44f46c3afb979b32d605f50903b7ff07361adf7d0d5f67d2516e15f510e498914c9058456656cb159634b13d465882bae0bef7ca5b5d64e07b996f4be6df35c311501c24f9002cf5eadb78f248df479f859b678d47537d1c9e81623dded4a408fadb6537b57eb801318e62e432230afcfd4c9f49017edbea51c68c591acdd5af293fd89cf69eae669f2c082cd551880bdb29e40e636b1d36949cf577502efae1d3d64cd8313ceaf8222c7fc917ba61091fb7e517c2d72ce824394ebf9f6fed8cd48631118ddde2249ea4a5389abfabf9d4b9c5039ecfa0b64d6843796186553c8d03a1b4f829a7d0759eb2ab46cd4d41e75b34993d549504fafdb74d289735cc9c2ffe7de3243fa7a5361c1cd013e9363a9640ee8131f2fa933ee6db03e7c2efeb9ff69eaa9b1b516c213ac8132788a33e21533e0f4764274717e79c80d1bb173d20892cb5aa56a22a1ce262a652896c22911b10bcb8e3b4e0ee23d8e3464def7f9ec2771c7267bb01deec0bd2a4aff8b7978c4481301e08097c2a65076be0a447d91cde1240d0bfb384ebfda6a77dcfa74a0481e6807cb3130c2268a7669fb7047d9cb65baf408ac3659f5aca1ce2ee4577355a0e837dd7491a1d887137fd2199721f91763584281a603a504f4c64f83bc78f135c75fb68b88d3e2d37bc0d5ca1e4fc1b417a88cf2e52653a810d09feaacb7ff4b03b3bcc946d52728c112a378b640462f2efad026fb260a9dc1f6b4c02b3b3edb38e1a295115317263c14738ed614a1406dc4ee6d5fc962a17bf5ac1ad96b2ff343d44a9f4869cae7a58395325135ef718b5e0889261765895542d7d8c335840e2fc2642aa644e3bc36eef55c9c41f3e801d0d56a7a68ec1772e4347a8e9077106343a3e8e952b4e62cb610d67232a20f83f1c5f4f2a2f4285c35a38c0fe4287cc547cc370cfc0226be4367164107e911190723ea88290d4428b5cf804ea759c493b85db0b06af1a6d892d52336b16de43c3fcda79a544dc3b539ee5d06be1ee2745ffbabe45817d1a037e3b34af3038fed624b94f001e30131118e7dc27b08962500303a3959430828225abeae21cf5bce8f5a450a8266360f8ad8f341764b96e0652b1000d2753656c22d698b6e1e4da9f8f72172fddf33c83391e3b44d87248c8eef90c895d0e6dba5ceb43248227a7316ba21756e596d0709ad6e75175ec2a2c0ef5f909d2561c3d7ff53e3684d393d7ed39704a6c2b6ae877c74d0cec3225176cd4375613fba1df3ad2cf95164c5ed93e3be955c48c174e5a33195164122e01a0501b13fce731f827de3e46f2cfe7e22a63dc30eca12eec07f8acfb20ea33d3704877f2ae0be5487e5d389aaddcd9bc42e13d3cd6a83004023b82fb402bc574b8f71420df9bcb14c0d389a1ca687fcee3148b330833312bb99acc33a5a4c04d030020acfc2fd614e8db6c194b731ce2231933626d6b33823e82f0b768df36bae05a0a1480c479204a30de1e5ed0708bb995ae941fb27a28d3ab447473ea5e7f4bef8b8799927ac52b7699d198e63495a362355188c640249761096473f837eee61cf09273fd85e54cb82a4c65540eccd320f0bb778eb54e3f121229f34ac50979e2ac96f64138c7c14f839fbd685a426076e48a996b89be01db6e4d5cec8955cb264cb7f4860b53b592369d4e0b3a549834fe11751432b59241202b298df88148fb09c047398ae40aebb4e69b1cf579487e2bdb9bd2be234f54c834b99be671715fd3a2f211e416adc4af9c794c74031387e9cba84b9a7f044db23bc36db0925f23dc502c8b9afcca8b04ef567c68805aa73408ab2a54182f5b11fdb1c2e112b7097cbc36d5aca3c43f8fb18d895fd437e5ab3caffd3eabb9508ef4f67659551d9b1e55ffed473ad5af01aa31327cbf5aefdd80f9710cb90ed65ba5baa6cf7e67b0c8913aea15373e4f27f55864f29f74fb403f89470f0d339b7e67f60a09f05df73e4df661fd3282f4b40ee982d8a2373842b6e5098500b378593acc096c28ed031a45d2fce6d03233908f7920038f7d3eba4dea4b591393</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<link href="/css/hbe.style.css" rel="stylesheet" type="text/css"><script data-swup-reload-script type="module" src="/js/plugins/hbe.js"></script>
+<script data-swup-reload-script type="module">
+import {initHBE} from "/js/plugins/hbe.js";
+    initHBE();
+</script>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Codeforces Round 1129 (Div. 2) &amp; OvOI Round 2 出题记录</li>
+        <li><strong>Author:</strong> Getaway_Car</li>
+        <li><strong>Created at
+                :</strong> 2026-03-04 12:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2026-11-03 21:17:28
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://getawaycar1024.github.io/article/Codeforces-Round-1129-Div-2-OvOI-Round-2-出题记录/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/article/OI-%E5%B0%B1%E6%98%AF%E4%B8%AA%E5%B7%A8%E5%A4%A7%E7%9A%84-recall%EF%BC%81/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">OI 就是个巨大的 recall！</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/article/diary/2026/03/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">2026 年 3 月日祭</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        (function() {
+            const containerId = "giscus-container";
+            const mapping = "pathname";
+            const lang = "en";
+            const inputPosition = "top";
+            const reactionsEnabled = "1" === "1";
+            const emitMetadata = "1" === "1";
+            const strict = "0" === "1";
+            const loading = "lazy";
+
+            const getTerm = () => {
+                if (mapping === "pathname") return location.pathname;
+                if (mapping === "url") return location.href;
+                if (mapping === "title") return document.title;
+                if (mapping === "og:title") {
+                    const ogTitle = document.querySelector("meta[property='og:title']");
+                    return ogTitle?.content || document.title;
+                }
+                return "";
+            };
+
+            const sendUpdate = () => {
+                const iframe = document.querySelector("iframe.giscus-frame");
+                if (!iframe) {
+                    return;
+                }
+
+                const setConfig = {
+                    theme: "preferred_color_scheme",
+                    lang,
+                    inputPosition,
+                    reactionsEnabled,
+                    emitMetadata,
+                    strict,
+                };
+
+                if (mapping !== "number") {
+                    const term = getTerm();
+                    if (term) {
+                        setConfig.term = term;
+                    }
+                }
+
+                iframe.contentWindow.postMessage(
+                    { giscus: { setConfig } },
+                    "https://giscus.app",
+                );
+            };
+
+            const loadGiscus = () => {
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    return;
+                }
+
+                const iframe = container.querySelector("iframe.giscus-frame");
+                if (iframe) {
+                    sendUpdate();
+                    return;
+                }
+
+                if (container.dataset.giscusInit === "true") {
+                    return;
+                }
+
+                const giscusConfig = {
+                    src: "https://giscus.app/client.js",
+                    "data-repo": "getawaycar1024/getawaycar1024.github.io",
+                    "data-repo-id": "R_kgDONTsbfg",
+                    "data-category": "Announcements",
+                    "data-category-id": "DIC_kwDONTsbfs4CuIU-",
+                    "data-mapping": mapping,
+                    "data-strict": "0",
+                    "data-reactions-enabled": "1",
+                    "data-emit-metadata": "1",
+                    "data-theme": "preferred_color_scheme",
+                    "data-lang": lang,
+                    "data-input-position": inputPosition,
+                    "data-loading": loading,
+                    crossorigin: "anonymous",
+                    async: true,
+                };
+
+                const giscusScript = document.createElement("script");
+                for (const key in giscusConfig) {
+                    giscusScript.setAttribute(key, giscusConfig[key]);
+                }
+                container.appendChild(giscusScript);
+                container.dataset.giscusInit = "true";
+            };
+
+            const runGiscus = () => {
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    return;
+                }
+
+                if (container.querySelector("iframe.giscus-frame")) {
+                    sendUpdate();
+                    return;
+                }
+
+                loadGiscus();
+            };
+
+            runGiscus();
+        })();
+    </script>
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Codeforces Round 1129 (Div. 2) &amp; OvOI Round 2 出题记录</div>
+		
+
+	</div>
+</div>
+	</div>
+	
+</div>
+
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2024</span>
+              -
+            
+            2026&nbsp;&nbsp;<i class="fa-regular fa-computer-classic"></i>&nbsp;&nbsp;<a href="/">Getaway_Car</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        93 posts in total
+                    </span>
+                    
+                        <span>
+                            111.2k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.9.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="fa-regular fa-arrow-up"></i>
+		</li>
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container" role="dialog" aria-modal="true" aria-label="Image viewer">
+	<button class="image-viewer-close" type="button" aria-label="Close">
+		<i class="fa-solid fa-xmark"></i>
+	</button>
+	<button class="image-viewer-prev" type="button" aria-label="Prev">
+		<i class="fa-solid fa-chevron-left"></i>
+	</button>
+	<div class="image-viewer-frame">
+		<img src="" alt="">
+	</div>
+	<div class="image-viewer-exif-panel hidden absolute left-1/2 bottom-20 -translate-x-1/2 w-[min(92vw,420px)] max-h-[60vh] overflow-hidden rounded-2xl bg-background-color-transparent-80 p-4 text-left shadow-redefine-flat backdrop-blur-md" role="dialog" aria-label="EXIF" aria-hidden="true">
+		<div class="flex items-center justify-between mb-3">
+			<span class="text-sm font-semibold text-first-text-color">EXIF</span>
+			<button class="image-viewer-exif-close flex h-8 w-8 items-center justify-center rounded-full bg-background-color-transparent-80 text-first-text-color transition hover:bg-background-color-transparent-40" type="button" aria-label="Close">
+				<i class="fa-solid fa-xmark text-[0.65rem]"></i>
+			</button>
+		</div>
+		<div class="image-viewer-exif-cards grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto pr-1 scrollbar-hide"></div>
+		<template class="image-viewer-exif-card-template">
+			<div class="rounded-lg bg-background-color-transparent-40 px-3 py-2">
+				<div class="image-viewer-exif-card-header flex items-center gap-2 mb-1">
+					<i class="image-viewer-exif-card-icon fa-solid fa-circle-info text-xs text-third-text-color"></i>
+					<div class="image-viewer-exif-card-title text-xs font-semibold text-first-text-color"></div>
+				</div>
+				<div class="image-viewer-exif-card-items flex flex-col gap-1"></div>
+			</div>
+		</template>
+	</div>
+	<button class="image-viewer-exif-toggle flex items-center gap-2 hidden absolute left-1/2 bottom-6 -translate-x-1/2 rounded-full border border-border-color bg-background-color-transparent-80 px-4 py-2 text-first-text-color backdrop-blur-md transition hover:bg-background-color-transparent-40" type="button" aria-label="EXIF" aria-expanded="false">
+		<i class="fa-solid fa-circle-info text-xs"></i>
+		<span class="text-xs font-semibold uppercase tracking-wider">EXIF</span>
+	</button>
+	<button class="image-viewer-next" type="button" aria-label="Next">
+		<i class="fa-solid fa-chevron-right"></i>
+	</button>
+</div>
+
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    window.swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+
+    window.dispatchEvent(
+        new CustomEvent("redefine:swup:ready", {
+            detail: {
+                swup: window.swup,
+            },
+        }),
+    );
+</script>
+
+
+
+
+	
+<script src="/js/build/main.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+
+
+
+
+
+    
+        
+<script src="/js/build/libs/mermaid.min.js"></script>
+
+    
+
+
+
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+
+	
+</body>
+
+</html>

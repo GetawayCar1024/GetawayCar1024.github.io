@@ -607,15 +607,15 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">93</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -700,15 +700,15 @@ mjx-container[display="true"] + br {
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">93</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -733,353 +733,36 @@ mjx-container[display="true"] + br {
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/CF2183F-Jumping-Man-%E9%A2%98%E8%A7%A3/">
-                            [CF2183F] Jumping Man 题解
+                        <a href="/article/diary/2026/04/">
+                            2026 年 4 月日祭
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            只能说我对树形 DP 的理解还是太狭隘了，甚至没想过可以两维都表示点。
-设  表示  子树内的点（不含 ）。求平方是难受的，考虑经典 trick，转化为求有多少对串串相同。设  表示 以  开头的串串 和 以  开头的串串 匹配的方案数，显然它当且仅当  时有值，且有 。因为涉及到子树，所以这个转移在 dfs 序上就是一个矩形的形式，做一下二维后缀和即可，详见代码。时间复杂度 。
-Submi...
+                            数据结构专题 2Link
+
+A - SUM and REPLACE
+板板势能线段树。
+
+B - 带修莫队 / [国家集训队] 数颜色 / 维护队列
+不会带修莫队 /ll。把修改看成时间轴即可，于是变成了三维莫队。
+
+C - 一个简单的询问
+四维莫队即可。也可以差分一下变成二维。
+
+D - 访问 Visits
+哦我有点烫了。考虑到  较大时跳的步数很少，于是可以暴力地跳，利用倍增或长剖；当  ...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Jan 08 2026 16:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Wed Apr 01 2026 00:00:00 GMT+0800">
                 
-                    2026-01-08
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/DP/">DP</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/DP-%E4%BC%98%E5%8C%96/">DP 优化</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">树上问题</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/CF2183F-Jumping-Man-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2183F] Jumping Man 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/CF2183E-LCM-is-Legendary-Counting-Master-%E9%A2%98%E8%A7%A3-%E8%A2%AB%E8%B7%AF%E7%94%B1%E5%99%A8%E5%81%9A%E5%B1%80%E4%BA%86/">
-                            [CF2183E] LCM is Legendary Counting Master 题解 &amp; 被路由器做局了
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            菜完了，1:33 才写完 E，然后网络炸了没交上去，1:35 网络又好了，后来才知道是路由器 1:30 自动重启，被路由器做局了。
-因为  单增，所以若  显然无解。考虑一种特殊情况，即 ，此时原式恰好等于 。考虑把  序列看成是从  中删了一些数，那么对于相邻两项  和 ，若不删除它们中间的数，那么贡献是 ；若删除它们中间的数，那么贡献是 。为了让删数过后原式 ，我们需要让 。简单推导得出...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Jan 08 2026 15:00:00 GMT+0800">
-                
-                    2026-01-08
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/DP/">DP</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/CF2183E-LCM-is-Legendary-Counting-Master-%E9%A2%98%E8%A7%A3-%E8%A2%AB%E8%B7%AF%E7%94%B1%E5%99%A8%E5%81%9A%E5%B1%80%E4%BA%86/">Read more<span class="seo-reader-text">[CF2183E] LCM is Legendary Counting Master 题解 &amp; 被路由器做局了</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4/">
-                            数据删除
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            <p>Here’s something encrypted, password is required to continue reading.</p>
-
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Jan 01 2026 19:10:00 GMT+0800">
-                
-                    2026-01-01
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4/">Read more<span class="seo-reader-text">数据删除</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/%E7%A5%AD%E6%88%91%E7%9A%84-2025/">
-                            祭我的 2025
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            <p>Here’s something encrypted, password is required to continue reading.</p>
-
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Jan 01 2026 00:00:00 GMT+0800">
-                
-                    2026-01-01
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/%E7%A5%AD%E6%88%91%E7%9A%84-2025/">Read more<span class="seo-reader-text">祭我的 2025</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/diary/2026/">
-                            2026 年日祭
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            
-2026 年 1 月日祭
-2026 年 2 月日祭
-2026 年 3 月日祭
-2026 年 4 月日祭
-2026 年 5 月日祭
-2026 年 6 月日祭
-2026 年 7 月日祭
-2026 年 8 月日祭
-2026 年 9 月日祭
-2026 年 10 月日祭
-2026 年 11 月日祭
-2026 年 12 月日祭
-
-
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Jan 01 2026 00:00:00 GMT+0800">
-                
-                    2026-01-01
+                    2026-04-01
                 
             </span>
         </span>
@@ -1125,7 +808,7 @@ Submi...
         
     </div>
 
-    <a href="/article/diary/2026/">Read more<span class="seo-reader-text">2026 年日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/diary/2026/04/">Read more<span class="seo-reader-text">2026 年 4 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1140,114 +823,26 @@ Submi...
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/diary/2026/01/">
-                            2026 年 1 月日祭
+                        <a href="/article/P15819-JOI-2015-Final-%E8%88%9E%E4%BC%9A-Ball-%E9%A2%98%E8%A7%A3/">
+                            P15819 [JOI 2015 Final] 舞会 / Ball 题解
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            容斥、计数专题Link
-Hello 2026Link
-这场 ABC 做得过于不顺了。
-
-D - Tree Coloring
-考虑到一个 naive 的按照 mex 的构造，发现显然假了。为了在新的一层不产生新的颜色，考虑让每个点都继承它一个儿子的颜色，再循环移位一下，然后就做完了。实现上有一些细节，比如某些情况依然需要按照 mex 构造。
-
-E - LCM is Legendary Coun...
+                            建议降蓝。
+首先编号显然是不重要的，因为最后只让最大化权值。其次具体权值也是不重要的，因为我们只对权值进行比较，只关心它们之间的大小关系。另外这个所谓的队列其实是一个三叉树的结构，下文将在树形上讨论。
+直接做是困难的，容易想到二分答案转判定。设答案 ，那么我们把权值  的视为 ，权值  的视为 ，可以先把确定的权值填到树上，我们的目标是让根节点成为 。由题意可知，一个节点是  当且仅当它至少...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Jan 01 2026 00:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Tue Mar 24 2026 21:00:00 GMT+0800">
                 
-                    2026-01-01
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/diary/2026/01/">Read more<span class="seo-reader-text">2026 年 1 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/CF2182F1-2-Christmas-Reindeer-%E9%A2%98%E8%A7%A3/">
-                            [CF2182F1 / 2] Christmas Reindeer 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            为啥上紫过后上了 max 就要下分，这场罚时吃饱了。
-另外这场 F1 / 2 都是糖糖题吧，赛时切的人少只是时间原因，感觉跟 Good Bye 2025 的 F 是一个难度的。
-可是我赛时差一点切 F1 / 2 导致晚上失眠了。
-
-不妨令 ，设  表示当前权值的系数（），称一只权值为  的鹿的实际权值为 。
-对于修改，直接拿个桶  存一下即可，于是考虑询问。观察这个式子：，因为  不增，所以...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Dec 30 2025 12:00:00 GMT+0800">
-                
-                    2025-12-30
+                    2026-03-24
                 
             </span>
         </span>
@@ -1285,12 +880,12 @@ E - LCM is Legendary Coun...
                     
                         <li>
                             
-                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
+                            <a href="/tags/DP/">DP</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>&nbsp;
+                            <a href="/tags/%E6%A0%91%E5%BD%A2-DP/">树形 DP</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1298,7 +893,7 @@ E - LCM is Legendary Coun...
         
     </div>
 
-    <a href="/article/CF2182F1-2-Christmas-Reindeer-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2182F1 / 2] Christmas Reindeer 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/P15819-JOI-2015-Final-%E8%88%9E%E4%BC%9A-Ball-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P15819 [JOI 2015 Final] 舞会 / Ball 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1313,18 +908,14 @@ E - LCM is Legendary Coun...
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/CF2180E-No-Effect-XOR-%E9%A2%98%E8%A7%A3/">
-                            [CF2180E] No Effect XOR 题解
+                        <a href="/article/%E6%97%A5%E8%AE%B0/">
+                            日记
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
-                            
-                            ABED hyw？
-赛时观察样例一发就过了。
-显然，这个异或操作是一个  的映射。发现大体上可以分为两种情况：一种是 ，那么  可以取  中的任意值；另一种是  满足 ，那么  可以取  或 。对于低位考虑第一种情况，再对剩下的高位考虑第二种情况即可。
-Submission。
+                            <p>Here’s something encrypted, password is required to continue reading.</p>
 
                         
                     </div>
@@ -1332,9 +923,9 @@ Submission。
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Dec 28 2025 12:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Mon Mar 16 2026 21:00:00 GMT+0800">
                 
-                    2025-12-28
+                    2026-03-16
                 
             </span>
         </span>
@@ -1347,17 +938,7 @@ Submission。
                     
                         
                         <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
                         </li>
                     
                     
@@ -1372,17 +953,7 @@ Submission。
                     
                         <li>
                             
-                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/">分类讨论</a>&nbsp;
+                            <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1390,7 +961,7 @@ Submission。
         
     </div>
 
-    <a href="/article/CF2180E-No-Effect-XOR-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2180E] No Effect XOR 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/%E6%97%A5%E8%AE%B0/">Read more<span class="seo-reader-text">日记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1405,35 +976,28 @@ Submission。
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/%E7%83%AD%E7%83%88%E7%A5%9D%E8%B4%BA%E3%80%90%E9%98%9F%E4%BC%8D%E5%90%8D%E7%A7%B0%E3%80%91%E5%9C%A8-THUPC2026-%E5%88%9D%E8%B5%9B%E4%B8%AD%E4%BB%A5-inf-%E9%A1%B9%E4%BC%98%E5%8A%BF%E9%A2%86%E8%B7%91%E6%88%91%E9%98%9F%EF%BC%81/">
-                            热烈祝贺【队伍名称】在 THUPC2026 初赛中以 inf 项优势领跑我队！
+                        <a href="/article/%E8%81%94%E5%90%88%E7%9C%81%E9%80%89-2026-%E6%B8%B8%E8%AE%B0/">
+                            联合省选 2026 游记
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            队员
-@Getaway_Car，简直太菜了。
-@O_v_O，简直太强了。
-@Mary3327，简直太强了。
-
-喜报
-@O_v_O 场切 2 题（GM），切题数量领跑我队！
-@Mary3327 场切 L 题，切题难度领跑我队！
-我队共切 4 题（GJLM），切题数量领跑我队！
-我队共吃 9 发罚时，罚时数量领跑我队！
-在我队范围内，我队首 A GJLM 四题，首 A 数量领跑我队！
-在 GJL...
+                            还是写一篇正经的游记，主要是 @O_v_O 想看。
+本文中的排名都是指在 SC 范围内。
+省流：三倍队线外一名，欢迎来核爆我。
+2026.3.7 之前CSP-S2025 与 NOIP2025 都考得不好，怎么会是呢。
+我承认我的水平远不如同省同年级的许多大神，但我不认为我的水平也像这两场比赛的分数一样平庸。甚至在 9 月，我的教练还希望（有点开玩笑的语气）我 E 类。可我在正赛中就从未展示出...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Dec 17 2025 16:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Fri Mar 13 2026 12:00:00 GMT+0800">
                 
-                    2025-12-17
+                    2026-03-13
                 
             </span>
         </span>
@@ -1471,12 +1035,7 @@ Submission。
                     
                         <li>
                             
-                            <a href="/tags/ACM/">ACM</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/THUPC/">THUPC</a>&nbsp;
+                            <a href="/tags/%E7%9C%81%E9%80%89/">省选</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1484,7 +1043,7 @@ Submission。
         
     </div>
 
-    <a href="/article/%E7%83%AD%E7%83%88%E7%A5%9D%E8%B4%BA%E3%80%90%E9%98%9F%E4%BC%8D%E5%90%8D%E7%A7%B0%E3%80%91%E5%9C%A8-THUPC2026-%E5%88%9D%E8%B5%9B%E4%B8%AD%E4%BB%A5-inf-%E9%A1%B9%E4%BC%98%E5%8A%BF%E9%A2%86%E8%B7%91%E6%88%91%E9%98%9F%EF%BC%81/">Read more<span class="seo-reader-text">热烈祝贺【队伍名称】在 THUPC2026 初赛中以 inf 项优势领跑我队！</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/%E8%81%94%E5%90%88%E7%9C%81%E9%80%89-2026-%E6%B8%B8%E8%AE%B0/">Read more<span class="seo-reader-text">联合省选 2026 游记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1499,24 +1058,256 @@ Submission。
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/AT-TTPC2024-D1C-Segment-Tree-%E9%A2%98%E8%A7%A3/">
-                            [AT TTPC2024 D1C] Segment Tree 题解
+                        <a href="/article/OI-%E5%B0%B1%E6%98%AF%E4%B8%AA%E5%B7%A8%E5%A4%A7%E7%9A%84-recall%EF%BC%81/">
+                            OI 就是个巨大的 recall！
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            把原图放到线段树上。首先拿一棵类似线段树的东西维护一下从区间左端点向右走到区间右端点的最短路。考虑把  拆成 ，其中  是向上走的， 是横着走的（允许 ）， 是向下走的，向上和向下走的过程中允许横着走。设 ，特别地，，表示点  对应树上的结点 。容易发现， 上可能经过的点一定是  所有的祖先（包括其本身）的左右端点，设这个点集为 ，显然  是  的，且容易通过 DP 求出  到  中每个点的...
+                            骗你的，不管是 replace 还是 recollector 都是 recall
+考虑到 replace 的一个重排是 recalpe
+recollector 的错误拼写是 recallector
+另外 starmap 的下发 grader 中还有个 recall（指手写 bitset）
+所以 OI 就是个巨大的 recall！
+
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Dec 15 2025 09:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Sun Mar 08 2026 20:00:00 GMT+0800">
                 
-                    2025-12-15
+                    2026-03-08
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90/">休闲娱乐</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E7%9C%81%E9%80%89/">省选</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/OI-%E5%B0%B1%E6%98%AF%E4%B8%AA%E5%B7%A8%E5%A4%A7%E7%9A%84-recall%EF%BC%81/">Read more<span class="seo-reader-text">OI 就是个巨大的 recall！</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/Codeforces-Round-1129-Div-2-OvOI-Round-2-%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95/">
+                            Codeforces Round 1129 (Div. 2) &amp; OvOI Round 2 出题记录
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>Here’s something encrypted, password is required to continue reading.</p>
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Mar 04 2026 12:00:00 GMT+0800">
+                
+                    2026-03-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+    </div>
+
+    <a href="/article/Codeforces-Round-1129-Div-2-OvOI-Round-2-%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95/">Read more<span class="seo-reader-text">Codeforces Round 1129 (Div. 2) &amp; OvOI Round 2 出题记录</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2026/03/">
+                            2026 年 3 月日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            数据结构专题 1Link
+
+A - ふたつのアンテナ (Two Antennas)
+太牛了，没想到打个 tag 就可以达到删除的效果。显然离线下来做扫描线，用线段树维护一下区间最大值、最小值和最大答案，那么加点和删点就是单点更新，其中删点是把最大值设为极小值最小值设为极大值；新增一个点 ，相当于对于一个区间，用  与最小值或最大值作差并更新最大答案，这也是可以维护的。时间复杂度 。
+
+B -...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Mar 01 2026 00:00:00 GMT+0800">
+                
+                    2026-03-01
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/diary/2026/03/">Read more<span class="seo-reader-text">2026 年 3 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/P15407-NOISG-2026-Prelim-%E7%B1%B3%E6%B5%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE-%E9%A2%98%E8%A7%A3/">
+                            P15407 [NOISG 2026 Prelim] 米浴的数据结构课 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            没场切，遂写题解。
+话说我不是十几天前才做过 P3345 吗，我怎么没场切这题。/ll
+设点权和为 。求动态重心主要有以下三种方法：
+
+重心是 DFS 序最大的、满足子树权值和  的点。此方法需要使用线段树维护区间子树权值和最大值。
+在 DFS 序上，设第一个权值的前缀和  的点是 ，那么  在重心的子树中，也即重心是  的祖先，且是离  最近的满足子树权值和  的祖先。此方法需要使用线段树...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Feb 22 2026 22:00:00 GMT+0800">
+                
+                    2026-02-22
                 
             </span>
         </span>
@@ -1559,7 +1350,7 @@ Submission。
                     
                         <li>
                             | 
-                            <a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>&nbsp;
+                            <a href="/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">树上问题</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1567,7 +1358,165 @@ Submission。
         
     </div>
 
-    <a href="/article/AT-TTPC2024-D1C-Segment-Tree-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[AT TTPC2024 D1C] Segment Tree 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/P15407-NOISG-2026-Prelim-%E7%B1%B3%E6%B5%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P15407 [NOISG 2026 Prelim] 米浴的数据结构课 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/P15408-NOISG-2026-Prelim-%E5%BA%A6%E6%95%B0%E7%BA%A6%E6%9D%9F%E7%94%9F%E6%88%90%E6%A0%91-%E9%A2%98%E8%A7%A3/">
+                            P15408 [NOISG 2026 Prelim] 度数约束生成树 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            场切了，遂写题解。
+首先把形如 1 u w 的边理解成点  的点权 。为方便，删去点 ，将剩下的点编号减去 ，并令 。不妨只保留这  个点的最小生成树。于是题意转化为，对于每个  求出：在  个点中选择  个点，并保留树的一些边，使得选择的  个点恰在  个连通块中，点权和与边权和之和的最小值。
+显然， 时选的点一定是  时选的点再加一个点。考虑  的情况，设  是点权最小的点，显然直接选择...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Feb 22 2026 21:00:00 GMT+0800">
+                
+                    2026-02-22
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">树上问题</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Kruskal/">Kruskal</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/P15408-NOISG-2026-Prelim-%E5%BA%A6%E6%95%B0%E7%BA%A6%E6%9D%9F%E7%94%9F%E6%88%90%E6%A0%91-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P15408 [NOISG 2026 Prelim] 度数约束生成树 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/Reversion/">
+                            Reversion
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>Here’s something encrypted, password is required to continue reading.</p>
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Feb 16 2026 22:00:00 GMT+0800">
+                
+                    2026-02-16
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/Reversion/">Read more<span class="seo-reader-text">Reversion</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1577,7 +1526,7 @@ Submission。
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-	<a class="extend prev" rel="prev" href="/page/2/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa-regular fa-angle-right"></i></a>
+	<a class="extend prev" rel="prev" href="/page/2/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
   
     </div>
@@ -1603,11 +1552,11 @@ Submission。
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        82 posts in total
+                        93 posts in total
                     </span>
                     
                         <span>
-                            94.4k words in total
+                            111.2k words in total
                         </span>
                     
                 </p>

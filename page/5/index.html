@@ -607,15 +607,15 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">93</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -700,15 +700,15 @@ mjx-container[display="true"] + br {
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">93</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -733,644 +733,24 @@ mjx-container[display="true"] + br {
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/P13407-GCJ-2010-Finals-Letter-Stamper-%E9%A2%98%E8%A7%A3/">
-                            P13407 [GCJ 2010 Finals] Letter Stamper 题解
+                        <a href="/article/AT-TTPC2024-D1C-Segment-Tree-%E9%A2%98%E8%A7%A3/">
+                            [AT TTPC2024 D1C] Segment Tree 题解
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            这篇题解有点魔怔。
-本题应该有很多不同的 DP 方法，但是核心应该都大同小异。
-观察栈中元素的性质，发现显然没有两个距离为一的相同的元素，若有则一定更劣。
-再想想，发现显然没有两个距离为二的相同的元素，若有则一定不优。
-再想想，发现栈中相邻的三个元素一定互不相同（即相邻的三个元素一定是 ABC 的一个排列）。
-再想想，假设我们知道当前栈的大小、栈顶元素与栈顶元素的下一个元素（若有），我们就可...
+                            把原图放到线段树上。首先拿一棵类似线段树的东西维护一下从区间左端点向右走到区间右端点的最短路。考虑把  拆成 ，其中  是向上走的， 是横着走的（允许 ）， 是向下走的，向上和向下走的过程中允许横着走。设 ，特别地，，表示点  对应树上的结点 。容易发现， 上可能经过的点一定是  所有的祖先（包括其本身）的左右端点，设这个点集为 ，显然  是  的，且容易通过 DP 求出  到  中每个点的...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Sep 29 2025 20:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Mon Dec 15 2025 09:00:00 GMT+0800">
                 
-                    2025-09-29
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/DP/">DP</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/P13407-GCJ-2010-Finals-Letter-Stamper-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P13407 [GCJ 2010 Finals] Letter Stamper 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/CF2150E2-Hidden-Single-Version-2-%E9%A2%98%E8%A7%A3/">
-                            [CF2150E2] Hidden Single (Version 2) 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            好难绷的题。
-你也许需要先会 E1。猜你喜欢：[CF2150E1] Hidden Single (Version 1) 题解
-看到题后似乎只能想到分治，于是想想该怎么分治。
-考虑对于  中的每个 ，判断它是不是答案。考虑 ，设中点为 。我们尝试找出  在当前区间内的分布情况（左区间或右区间）。总共分三类情况：
-
-所有  均出现在左区间：有  的概率，需要询问  次。
-所有  均出现在右区间：...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Sep 25 2025 21:00:00 GMT+0800">
-                
-                    2025-09-25
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E4%BA%A4%E4%BA%92/">交互</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/">随机化</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/CF2150E2-Hidden-Single-Version-2-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2150E2] Hidden Single (Version 2) 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/CF2150E1-Hidden-Single-Version-1-%E9%A2%98%E8%A7%A3/">
-                            [CF2150E1] Hidden Single (Version 1) 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            看到题后似乎只能想到分治，于是想想该怎么分治。
-考虑 ，设中点为 。假定当前区间内存在答案，并且我们知道  中的每个  在这个区间内的出现次数 。特别地，对于答案 ，我们不得不钦定 。对于  中的每个 ，我们尝试找出它在当前区间内的分布情况（左区间或右区间）。于是根据  分讨：
-
-：需要  次询问。直接跳过。
-：需要  次询问。只需要询问左区间，即可得到它属于左区间还是右区间。
-：最多需要 ...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Sep 25 2025 20:00:00 GMT+0800">
-                
-                    2025-09-25
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E4%BA%A4%E4%BA%92/">交互</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/CF2150E1-Hidden-Single-Version-1-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2150E1] Hidden Single (Version 1) 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ABC424G-Set-list-%E9%A2%98%E8%A7%A3/">
-                            [ABC424G] Set list 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            乍一看感觉很难直接 DP，于是考虑先把限制形式化。设当前选的歌曲形成的集合是 ，因为歌曲的顺序并不影响所选集合的合法性，所以 。考虑简化条件，对于一个固定的 ，要最大化前者，显然只需要取较大的几个 。所以自然想到先将  （连带着 ）降序排序，条件就转化为了 ，记后者为 ，它是可以预处理出来的。可以证明这个条件是充要的，一个感性的理解是，我们取出了原集合的每一个子集并判断其是否合法，具体的证明...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Sep 23 2025 20:00:00 GMT+0800">
-                
-                    2025-09-23
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/DP/">DP</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E8%83%8C%E5%8C%85-DP/">背包 DP</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ABC424G-Set-list-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC424G] Set list 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ABC423G-Small-Multiple-2-%E9%A2%98%E8%A7%A3/">
-                            [ABC423G] Small Multiple 2 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            好题。本题解做法与官方题解相同，但将采用类似 CF Hints 的风格。下文中的  均指将两个十进制数进行拼接， 表示  在十进制下的位数，且默认包含前导零。
-提示 1考虑答案的形式。
-答案答案一定是  的形式，其中允许  有前导零。
-
-
-
-提示 2考虑  与  的限制。
-答案最基础地，有 ，即 。同时有 （均包含前导零），因为一定存在一个  满足：
-
-
-
-
-若  则  这一组解严格劣于  ...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Sep 15 2025 20:00:00 GMT+0800">
-                
-                    2025-09-15
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ABC423G-Small-Multiple-2-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC423G] Small Multiple 2 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ABC423F-Loud-Cicada-%E9%A2%98%E8%A7%A3/">
-                            [ABC423F] Loud Cicada 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            赛时看到这个题先乱写了一个状压，发现显然没有正确性，然后开始乱推容斥，后面发现自己想复杂了，想到了本文的做法，但是因为太慌了在一直在乱写，调半天没过样例，最后在 85 分钟才做出来，菜死了。
-
-
-看到  显然状压。首先容易想到设  表示一定出现的蝉种类形成的集合为  的年份数量（没有被选中的蝉不一定出现）， 表示出现的蝉种类形成的集合为  时的年份数量（没有被选中的蝉一定不出现）， 表示出现...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Sep 15 2025 12:00:00 GMT+0800">
-                
-                    2025-09-15
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/DP/">DP</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9-DP/">状态压缩 DP</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ABC423F-Loud-Cicada-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC423F] Loud Cicada 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/ARC205D-Non-Ancestor-Matching-%E9%A2%98%E8%A7%A3/">
-                            [ARC205D] Non-Ancestor Matching 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            赛时没打这场 ABC。
-设  的重儿子是 ，以  为根的子树为 ， 的大小是 ， 中最多能选出  个点对。定义点  是好的，当且仅当 。接下来分点  是不是好的分类讨论：
-
-若点  是好的：显然有 。
-若点  不是好的：我们尝试让  成为好的。具体地，我们可以在  中先选取一些点对，并且从  中删去这些点，使得  减小，从而使点  成为好的。在  中最多可以选取  个点对，所以  的最小值是...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Sep 08 2025 12:00:00 GMT+0800">
-                
-                    2025-09-08
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/OI/">OI</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/DP/">DP</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/article/ARC205D-Non-Ancestor-Matching-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ARC205D] Non-Ancestor Matching 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/article/AT-TTPC2015-O-%E6%95%B0%E5%88%97%E8%89%B2%E3%81%AC%E3%82%8A-%E9%A2%98%E8%A7%A3/">
-                            [AT TTPC2015 O] 数列色ぬり 题解
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            鲜花MX NOIP 模拟赛 T3，补题时只找到了一篇 十年前的日文题解，并且目前洛谷里这道题唯一一个讨论甚至还是提供翻译，并且也是七年前的了。这题真冷门。
-
-
-下文中，最长上升子序列简写为 LIS，最长下降子序列简写为 LDS。
-注意到红色的元素构成了一个单调递增的子序列 ，蓝色的元素构成了一个单调递减的子序列 。在最优情况下，若  恰好是 LIS，且  恰好是 LDS，那么答案为 ；否则，...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Sep 03 2025 08:30:00 GMT+0800">
-                
-                    2025-09-03
+                    2025-12-15
                 
             </span>
         </span>
@@ -1413,7 +793,7 @@ mjx-container[display="true"] + br {
                     
                         <li>
                             | 
-                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
+                            <a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1421,7 +801,7 @@ mjx-container[display="true"] + br {
         
     </div>
 
-    <a href="/article/AT-TTPC2015-O-%E6%95%B0%E5%88%97%E8%89%B2%E3%81%AC%E3%82%8A-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[AT TTPC2015 O] 数列色ぬり 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/AT-TTPC2024-D1C-Segment-Tree-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[AT TTPC2024 D1C] Segment Tree 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1436,34 +816,128 @@ mjx-container[display="true"] + br {
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/diary/2025/09/">
-                            2025 年 9 月日祭
+                        <a href="/article/CF2173E-Shiro-s-Mirror-Duel-%E9%A2%98%E8%A7%A3/">
+                            [CF2173E] Shiro&#39;s Mirror Duel 题解
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            鲜花 (2025.9.1)注意到我停课了。
-另外注意到我今天上午做了三道题，下午也许是在尝试改上一场 CF 的 Div. 1 E，顺便学习了一下反射容斥。学了之后发现改不出来，于是放弃了，并开始补日祭。总之就是下午一道题都没做？啊？什么效率？但是我不是挺认真的吗？啊？
-
-
-MX NOIP 3Link
-
-A - Novelist
-略。
-
-B - Bicycle Tour
-根据部分分容易想到从小...
+                            我是智障吧，赛时代码删一行就过了。
+设  表示  在  中的下标。
+若  是奇数，首先把  放到位置  上，期望  次询问。
+容易注意到，对于 ，若 ，即  与  的位置关于中点对称，此时若询问一次 ，一定能把  与  中的一个复原。但是既然都复原了一个，为什么不把另一个也复原了呢？设复原  与  之前的  为 ，那么考虑反复询问  直到  与  复原。算一下这个东西的期望，有 ，解得 ，所...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Sep 01 2025 00:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Sun Dec 07 2025 21:00:00 GMT+0800">
                 
-                    2025-09-01
+                    2025-12-07
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E4%BA%A4%E4%BA%92/">交互</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2173E-Shiro-s-Mirror-Duel-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2173E] Shiro&#39;s Mirror Duel 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2025/12/">
+                            2025 年 12 月日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            DP 专题Link
+
+A - Matching
+唐。
+
+B - 乘积，欧拉函数，求和
+类似 G。
+
+C - 互不侵犯
+唐。
+
+D - Eat The Trees
+插头 DP 模板弱化版。
+
+E - Tree Planting
+屎。考虑分治，对于  较小和较大的情况分开讨论，两种情况的暴力都是好写的，只需要再剪剪枝卡卡常就能过了。
+
+F - 游园会
+DP 套 DP 板子。设  表示文本串的前 ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Dec 01 2025 00:00:00 GMT+0800">
+                
+                    2025-12-01
                 
             </span>
         </span>
@@ -1509,7 +983,7 @@ B - Bicycle Tour
         
     </div>
 
-    <a href="/article/diary/2025/09/">Read more<span class="seo-reader-text">2025 年 9 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/diary/2025/12/">Read more<span class="seo-reader-text">2025 年 12 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1524,29 +998,143 @@ B - Bicycle Tour
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/ABC420G-sqrt-n%C2%B2-n-X-%E9%A2%98%E8%A7%A3/">
-                            [ABC420G] sqrt(n²+n+X) 题解
+                        <a href="/article/NOIP-2025-%E6%B8%B8%E5%AF%84/">
+                            NOIP 2025 游寄
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                             一眼根号复杂度。
-这道题应该有很多做法。我的做法是尝试消掉 ，使得关于  只出现了一次项。
-设
-那么就可以枚举  解出 ，当  是整数是才是合法解。 是根号级别的，但是为了保险， 的值域可以开大一点。
-赛时提交记录，稍微卡了点常，所以写法有点沟槽。应该不卡常就用 set 去重也能过。
+                            T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
+T2 放紫我死磕牛魔呢。
 
+你说得对，但是：
+
+
+
+
+
+
+
+
+@dpfs 终于实现了 TA 的梦想。
+
+请原谅这劣质的画质与劣质的 P 图。
+
+后记：
+原来我赛...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Aug 25 2025 10:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Sat Nov 29 2025 23:00:00 GMT+0800">
                 
-                    2025-08-25
+                    2025-11-29
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90/">休闲娱乐</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/NOIP/">NOIP</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/NOIP-2025-%E6%B8%B8%E5%AF%84/">Read more<span class="seo-reader-text">NOIP 2025 游寄</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CF1586I-Omkar-and-Mosaic-%E9%A2%98%E8%A7%A3/">
+                            [CF1586I] Omkar and Mosaic 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            下文中：
+
+视题目中的两种颜色为黑色与白色。图示中所有颜色均只是为了表示颜色的相同或不同，且白色代表未填充。
+记  表示第  行第  列的格子。
+认为两个格子“相等”或“不等”，当且仅当两个格子的颜色相同或不同。
+
+
+难点在于观察性质。
+考虑在没有任何限制的情况下，一组合法解有哪些性质。有两个基本性质是：
+
+位于角落的格子的颜色与其相邻的格子颜色相同。
+对于一个不在边缘的格子，它的四联通中，...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Nov 19 2025 21:00:00 GMT+0800">
+                
+                    2025-11-19
                 
             </span>
         </span>
@@ -1584,7 +1172,12 @@ B - Bicycle Tour
                     
                         <li>
                             
-                            <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>&nbsp;
+                            <a href="/tags/%E6%9E%84%E9%80%A0/">构造</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Ad-hoc/">Ad-hoc</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1592,7 +1185,441 @@ B - Bicycle Tour
         
     </div>
 
-    <a href="/article/ABC420G-sqrt-n%C2%B2-n-X-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC420G] sqrt(n²+n+X) 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/CF1586I-Omkar-and-Mosaic-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF1586I] Omkar and Mosaic 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/P14528-BYOI-R1-%E9%9B%A8%E5%90%8E%E5%B1%8B%E6%AA%90-%E9%A2%98%E8%A7%A3/">
+                            P14528 [BYOI R1] 雨后屋檐 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            题面 &amp; 提示P1318 加强版，区别在于本题包含多个询问，每个询问给定查询的区间  与最大水面高度 ，强制在线。P1318 的做法对本题有一些启发。
+
+
+设  同阶。
+考虑本题的难点在哪里。发现屋顶的两侧不一定足够高，所以一些水会流出去。
+考虑特殊性质，此时没有水会流出去。考虑这时该怎么做。发现此时的答案为：
+
+即：
+
+发现这个问题相当于二维数点，于是考虑使用可持久化权值线段树解决...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Nov 16 2025 18:30:00 GMT+0800">
+                
+                    2025-11-16
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/P14528-BYOI-R1-%E9%9B%A8%E5%90%8E%E5%B1%8B%E6%AA%90-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P14528 [BYOI R1] 雨后屋檐 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/SC-CSP-S-2025-%E8%BF%B7%E6%83%91%E8%A1%8C%E4%B8%BA%E5%A4%A7%E8%B5%8F/">
+                            SC CSP-S 2025 迷惑行为大赏
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            SC CSP-S 2025 共有 1704 个选手文件夹，6009 个文件。
+数据统计使用 vscode 进行统计，没有排除诈骗。
+
+freopen：5807 文件中有 12004 个结果
+dp：292 文件中有 3437 个结果
+ccf：35 文件中有 990 个结果
+rand / mt19937：115 文件中有 299 个结果
+形如 //freopen：149 文件中有 291 个结果...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Nov 06 2025 16:00:00 GMT+0800">
+                
+                    2025-11-06
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90/">休闲娱乐</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/CSP/">CSP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90/">休闲娱乐</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/SC-CSP-S-2025-%E8%BF%B7%E6%83%91%E8%A1%8C%E4%B8%BA%E5%A4%A7%E8%B5%8F/">Read more<span class="seo-reader-text">SC CSP-S 2025 迷惑行为大赏</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CSP-S-2025-%E6%B8%B8%E5%AF%84/">
+                            CSP-S 2025 游寄
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            upd
+CSP-S2024 (170) &lt; CSP-S2025 (194) &lt; NOIP2024 (200)
+每次 S 都考成屎。
+我也是有办法了。
+甚至可能还是拿不到钩 7。
+
+下文中所有的「唐」用「奶龙」代替。
+Day -1一上午只做了一道结构体，然后就完全静不下心做题了。
+然后就在水讨论区。某个同机房的批话哥拿小号发批话帖，还不让我拆穿或者举报，就不点名是谁了。
+因为学校是...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Nov 01 2025 20:00:00 GMT+0800">
+                
+                    2025-11-01
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/CSP/">CSP</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CSP-S-2025-%E6%B8%B8%E5%AF%84/">Read more<span class="seo-reader-text">CSP-S 2025 游寄</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2025/11/">
+                            2025 年 11 月日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            CSP-S 2025
+A - 社团招新
+原来这就是反悔贪心啊。
+
+B - 道路修复
+我是唐。发现一个图在加入若干条边后，原来不在 MST 的边现在还是不在 MST。随便搞搞即可。
+
+C - 谐音替换
+赛时想到一个树套树做法但是没写出来。
+感觉转成二维数点的做法不是很优，于是严肃决定恶补一下串串。
+首先把  写成  的形式，然后把两个串合在一起变成 ，然后原题就变成求有多少个模式串是文本串的子...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Nov 01 2025 00:00:00 GMT+0800">
+                
+                    2025-11-01
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/diary/2025/11/">Read more<span class="seo-reader-text">2025 年 11 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/CF2159D1-2-Inverse-Minimum-Partition-%E9%A2%98%E8%A7%A3/">
+                            [CF2159D1 / 2] Inverse Minimum Partition 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            上大分场，Div. 2 Rank 8，紫名祭。
+不妨设值域为 。首先你需要发现一堆有关  与  的性质。
+性质一下文中，「 是后缀最小值」当且仅当 。
+我们发现，对于 ，如果存在  满足 ，那么让  作为子段的结尾一定不优。即，当且仅当  是后缀最小值时，位置  才可能作为子段的结尾。同理，当且仅当  是后缀最小值时，位置  才可能作为子段的开头，否则一定不优。
+于是，我们只需要关注原序列中...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Oct 13 2025 20:00:00 GMT+0800">
+                
+                    2025-10-13
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/DP-%E4%BC%98%E5%8C%96/">DP 优化</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2159D1-2-Inverse-Minimum-Partition-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2159D1 / 2] Inverse Minimum Partition 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1602,7 +1629,7 @@ B - Bicycle Tour
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-	<a class="extend prev" rel="prev" href="/page/4/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa-regular fa-angle-right"></i></a>
+	<a class="extend prev" rel="prev" href="/page/4/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
   
     </div>
@@ -1628,11 +1655,11 @@ B - Bicycle Tour
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        82 posts in total
+                        93 posts in total
                     </span>
                     
                         <span>
-                            94.4k words in total
+                            111.2k words in total
                         </span>
                     
                 </p>

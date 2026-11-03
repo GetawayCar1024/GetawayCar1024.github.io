@@ -607,15 +607,15 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">93</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -700,15 +700,15 @@ mjx-container[display="true"] + br {
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">93</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -733,29 +733,31 @@ mjx-container[display="true"] + br {
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/COCI-2023-2024-2-Zatopljenje-%E9%A2%98%E8%A7%A3/">
-                            [COCI 2023/2024 #2] Zatopljenje 题解
+                        <a href="/article/ABC400F-Happy-Birthday-3-%E9%A2%98%E8%A7%A3/">
+                            [ABC400F] Happy Birthday! 3 题解
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            闲话考前集训，每日一练做到的题，我写挂了五次。自己想到分块的做法，看题解区没有，于是来发一篇。
-思路我们注意到，当海水高度为  时，区间  的小岛的个数可以这么计算：
+                            考虑正难则反。问题转化为：
 
-所以第  个位置产生贡献当且仅当  ，考虑分块并预处理出每个块的答案。由于  ，所以要离散化。时间复杂度  ，虽然比不上线段树或树状数组，但是思路还是比较好想的。
-具体细节见代码实现。
-Tip : 不要开long long，...
+一个环上有  个物品，颜色分别为 ，每次操作选择两个数  使得 ，将  中的每个物品的颜色都设为 。（下文将这种操作称为“漂白”。）一次操作的代价为 。求将整个环漂白的最小总代价。
+
+先断环为链。设  表示将  漂白的最小代价，那么显然有 。
+设  表示使  能够漂白的最小代价，那么显然有 。当  时，有 。
+答案即为 。
+
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sat Oct 19 2024 12:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Tue Apr 08 2025 12:00:00 GMT+0800">
                 
-                    2024-10-19
+                    2025-04-08
                 
             </span>
         </span>
@@ -793,7 +795,7 @@ Tip : 不要开long long，...
                     
                         <li>
                             
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                            <a href="/tags/DP/">DP</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -801,7 +803,7 @@ Tip : 不要开long long，...
         
     </div>
 
-    <a href="/article/COCI-2023-2024-2-Zatopljenje-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[COCI 2023/2024 #2] Zatopljenje 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/ABC400F-Happy-Birthday-3-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[ABC400F] Happy Birthday! 3 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -816,31 +818,122 @@ Tip : 不要开long long，...
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/article/diary/2024/">
-                            2024 年日祭（部分）
+                        <a href="/article/CF2086E-Zebra-like-Numbers-%E9%A2%98%E8%A7%A3/">
+                            [CF2086E] Zebra-like Numbers 题解
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            此处仅展示了部分内容，其余内容将不会整理。
-2024.10.18由于时间久远，所以这一天的这一篇主要记录题目与思路。
+                            确简单的啊，可是自己就是想不到。
+考虑计算一个数的斑马值。贪心地，尽量选大的斑马数减即可。
+考虑 DP，设  表示  中斑马值为  的数的个数。那么显然有 ，其中  是不大于  的最大的斑马数。具体地， 表示  中斑马值为  的数的个数， 表示  中斑马值为  的数的个数。
+记搜即可。
 
-A - 字符串
-题目：给定两个字符串  ，  ，且满足：  ，  ，求  的第  位。
-题解：事实上，  并不影响答案，因为此时长度足够长。对于一个  的“长串”，可以将其分成  四段，发现  与  相同，  与  相同。所以我们就一直从后面往前跳，直到无法跳为止。
-
-B ...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Oct 01 2024 00:00:00 GMT+0800">
+            <span class="home-article-date" data-date="Tue Apr 08 2025 12:00:00 GMT+0800">
                 
-                    2024-10-01
+                    2025-04-08
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AE%A1%E6%95%B0/">计数</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%90%9C%E7%B4%A2/">搜索</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/CF2086E-Zebra-like-Numbers-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">[CF2086E] Zebra-like Numbers 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2025/04/">
+                            2025 年 4 月日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            2025.4.1 愚人节今日歌曲：Forever Winter
+我的日祭之前断更了一段时间，今天终于补上了。
+今天改不动题，于是在出题。
+2025.4.6 水讨论区今日歌曲：Guilty Pleasure
+讨论区居然真的回来了，又可以水讨论区了（。
+今天 VP Codeforces Round 1015, Div. 1 + Div. 2，赛后结算时，发现机房网络得了 MVP。详见犇犇。
+前四...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Apr 01 2025 00:00:00 GMT+0800">
+                
+                    2025-04-01
                 
             </span>
         </span>
@@ -886,7 +979,615 @@ B ...
         
     </div>
 
-    <a href="/article/diary/2024/">Read more<span class="seo-reader-text">2024 年日祭（部分）</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/article/diary/2025/04/">Read more<span class="seo-reader-text">2025 年 4 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/%E8%81%94%E5%90%88%E7%9C%81%E9%80%89-2025-%E6%B8%B8%E8%AE%B0/">
+                            联合省选 2025 游记
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            感谢 @fan_xiaoyi 提供的部分文本故事。
+作者是初二蒟蒻，实力有限，不喜勿喷。
+
+在遥远的傻子谷，生长着一棵特殊的树，名为二叉树。它以结构规则、枝繁叶茂而闻名，被谷民们视为神树，而神树也庇佑着这片土地。
+二叉树所结的果实被称为提姆，其颜色从红到黑，颜色越深，价值越高。此外，还存在一种灰色提姆，这类果实尚未成熟，在生长过程中会随机变化，无法预测其最终状态。每颗提姆都包含 100 颗种...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Mar 02 2025 18:00:00 GMT+0800">
+                
+                    2025-03-02
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%9C%81%E9%80%89/">省选</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/%E8%81%94%E5%90%88%E7%9C%81%E9%80%89-2025-%E6%B8%B8%E8%AE%B0/">Read more<span class="seo-reader-text">联合省选 2025 游记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2025/03/">
+                            2025 年 3 月日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            2025.3.1&amp;2 正常说话这两天参加省选。这里用正常的说话方式补充一些有关考试题目的内容。
+
+[洛谷 P11830] [省选联考 2025] 幸运数字
+钦定中位数为 ，设可重集中小于  的数的个数为 ，等于的是 ，大于的是 ，那么有 ，所以 。为了让  尽量成为中位数，那么考虑让  尽可能大，即能取  的都取 。同时可以得到  的范围，便可判断。用差分维护即可。
+
+[洛谷 P11...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Mar 01 2025 00:00:00 GMT+0800">
+                
+                    2025-03-01
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/diary/2025/03/">Read more<span class="seo-reader-text">2025 年 3 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2025/02/">
+                            2025 年 2 月日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            2025.2.8 水讨论区今日歌曲：Bigger Than The Whole Sky
+今天洛谷讨论区关闭了。（以后不能水讨论区了。）
+这个寒假，什么也没干。一看进度，已经和初二的差不多。但是他们第一遍拉得挺快，估计效果不大。
+我如果现在回去，在那边又吃不饱。于是，就只有多肝一肝，把之前的进度补上来。
+晚上打ABC392。
+
+[Atcoder ABC392E] Cables and Serv...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Feb 01 2025 00:00:00 GMT+0800">
+                
+                    2025-02-01
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/diary/2025/02/">Read more<span class="seo-reader-text">2025 年 2 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/P6808-Candies-%E9%A2%98%E8%A7%A3/">
+                            P6808 Candies 题解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            鲜花校内模拟赛T3，赛时想到了正解的 ，所以就得了  分……
+赛后 T 了若干发之后终于过了。
+
+本文提供一种非回退背包的解法。
+在下文中，记 。
+Solution 1假设我们修改 ，设用其他数拼出的方案数为  ，那么当  足够大时，有 。所以问题就转化到了求  与 。
+考虑枚举 ，并对于每个  进行 DP 计算 。求出最大值与最大值位置（即 ）后，需要求 。
+设  表示是否能凑出 。很容易...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 22 2025 12:00:00 GMT+0800">
+                
+                    2025-01-22
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/DP/">DP</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/bitset/">bitset</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/DP-%E4%BC%98%E5%8C%96/">DP 优化</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/P6808-Candies-%E9%A2%98%E8%A7%A3/">Read more<span class="seo-reader-text">P6808 Candies 题解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2025/">
+                            2025 年日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            
+2025 年 1 月日祭
+2025 年 2 月日祭
+2025 年 3 月日祭
+2025 年 4 月日祭
+2025 年 5 月日祭
+2025 年 6 月日祭
+2025 年 7 月日祭
+2025 年 8 月日祭
+2025 年 9 月日祭
+2025 年 10 月日祭
+2025 年 11 月日祭
+2025 年 12 月日祭
+
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 01 2025 00:00:00 GMT+0800">
+                
+                    2025-01-01
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/diary/2025/">Read more<span class="seo-reader-text">2025 年日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/diary/2025/01/">
+                            2025 年 1 月日祭
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            2025.1.4 新的一年今日歌曲：New Year’s Day
+去年停课的时候是有记日祭的，但是有一些是手写的，一直都还没有整理好。今天看到一个简单的trick，想记下来。于是，就又开始写日祭了。
+
+[洛谷 P2831] [NOIP2016 提高组] 愤怒的小鸟
+一道远古状压题了。（一是指题目本身远古，二是指这道题是好久之前就该做的题。）看到第一篇题解的trick，想起去年暑假集训的时候也...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 01 2025 00:00:00 GMT+0800">
+                
+                    2025-01-01
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%97%A5%E7%A5%AD/">日祭</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/diary/2025/01/">Read more<span class="seo-reader-text">2025 年 1 月日祭</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/article/NOIP-%E6%B8%B8%E8%AE%B0/">
+                            NOIP + 游记（流水帐）
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            为什么是NOIP + 游记？因为其实是 NOIP游记 和 环球中心游记 。
+Warning本文纯流水帐，想了解题目做法的请移步。
+Day -34考 CSP-S 了，炸掉了。赛时估分只有120-160pts。
+Day -26出分了，170pts。
+Day -11出分数线了，SC180pts呜呜呜。
+Day -??老师给我们报了NOIP。
+Day -??NOIP线出来了，165pts，好险。
+D...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Nov 30 2024 22:00:00 GMT+0800">
+                
+                    2024-11-30
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OI/">OI</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/OI/%E6%B8%B8%E8%AE%B0/">游记</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90/">休闲娱乐</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/NOIP/">NOIP</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/article/NOIP-%E6%B8%B8%E8%AE%B0/">Read more<span class="seo-reader-text">NOIP + 游记（流水帐）</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -896,7 +1597,7 @@ B ...
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-	<a class="extend prev" rel="prev" href="/page/8/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+	<a class="extend prev" rel="prev" href="/page/8/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
   
     </div>
@@ -922,11 +1623,11 @@ B ...
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        82 posts in total
+                        93 posts in total
                     </span>
                     
                         <span>
-                            94.4k words in total
+                            111.2k words in total
                         </span>
                     
                 </p>
